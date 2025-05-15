@@ -58,7 +58,8 @@ class WatchFaceType {
 }
 
 class WatchFaceLayoutType {
-  static const String defaultWatchFaceBgMd5 = "00000000000000000000000000000000";
+  static const String defaultWatchFaceBgMd5 =
+      "00000000000000000000000000000000";
   static const int watchFaceTimeTop = 0;
   static const int watchFaceTimeBottom = 1;
   static const int watchFaceContentclose = 0;
@@ -278,6 +279,7 @@ class ECGType {
 }
 
 class FileTransType {
+  // Ini sepertinya untuk tipe transfer file generik, biarkan saja.
   static const int startTrans = 1;
   static const int transProgress = 2;
   static const int transCompleted = 3;
@@ -309,12 +311,57 @@ class SleepType {
   static const int goalSleepTimeChange = 3;
 }
 
+// == MODIFIKASI BAGIAN INI ==
+/// Watch face file transfer event type (dan event lainnya yang terkait dengan stream ini)
 class TransType {
+  // Kelas ini sudah ada, kita hanya menambahkan konstanta baru
   static const int transStart = 1;
   static const int transChanged = 2;
   static const int transCompleted = 3;
   static const int error = 4;
+  // TAMBAHKAN KONSTANTA BARU DI SINI:
+  static const int installStateChanged =
+      5; // Harus cocok dengan nilai di FileTransBean.java (Android)
+  static const int unknown =
+      0; // Opsional: untuk nilai default atau tidak dikenal
 }
+// == AKHIR MODIFIKASI BAGIAN INI ==
+
+// == TAMBAHKAN ENUM DAN FUNGSI BARU DI SINI ==
+/// Enum untuk merepresentasikan tipe event transfer watch face di sisi Dart.
+/// Ini akan membuat kode di widget Anda lebih aman dan mudah dibaca.
+enum WatchFaceTransferEventType {
+  transStart,
+  transChanged,
+  transCompleted,
+  error,
+  installStateChanged, // Tipe baru
+  unknown
+}
+
+/// Fungsi untuk mengkonversi nilai integer 'type' dari native code
+/// ke enum WatchFaceTransferEventType.
+WatchFaceTransferEventType mapIntToWatchFaceTransferEventType(int value) {
+  switch (value) {
+    case TransType
+          .transStart: // Menggunakan konstanta dari kelas TransType di atas
+      return WatchFaceTransferEventType.transStart;
+    case TransType.transChanged:
+      return WatchFaceTransferEventType.transChanged;
+    case TransType.transCompleted:
+      return WatchFaceTransferEventType.transCompleted;
+    case TransType.error:
+      return WatchFaceTransferEventType.error;
+    case TransType.installStateChanged: // Menggunakan konstanta baru
+      return WatchFaceTransferEventType.installStateChanged;
+    default:
+      // Anda bisa menambahkan logging di sini jika menerima nilai yang tidak dikenal
+      print(
+          'MoyoungSDK: Unknown WatchFaceTransferEventType value received from native: $value');
+      return WatchFaceTransferEventType.unknown;
+  }
+}
+// == AKHIR TAMBAHAN ENUM DAN FUNGSI BARU ==
 
 class DisplayTimeType {
   static const int displayFive = 5;
@@ -336,6 +383,7 @@ class OTAMcuType {
 }
 
 class SendWatchFaceType {
+  // Ini sepertinya untuk tipe lain, biarkan saja.
   static const int transProgressStart = 1;
   static const int transProgressChanged = 2;
   static const int transCompleted = 3;

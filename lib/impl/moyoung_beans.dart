@@ -2,8 +2,11 @@ import 'dart:convert';
 
 import 'dart:typed_data';
 import 'dart:ui';
+// Pastikan path ini benar untuk mengimpor definisi dari moyoung_contants.dart
+import 'moyoung_contants.dart';
 
-ConnectBean connectBeanFromJson(String str) => ConnectBean.fromJson(json.decode(str));
+ConnectBean connectBeanFromJson(String str) =>
+    ConnectBean.fromJson(json.decode(str));
 
 String connectBeanToJson(ConnectBean data) => json.encode(data.toJson());
 
@@ -31,9 +34,11 @@ class ConnectBean {
       };
 }
 
-ConnectStateBean connectStateBeanFromJson(String str) => ConnectStateBean.fromJson(json.decode(str));
+ConnectStateBean connectStateBeanFromJson(String str) =>
+    ConnectStateBean.fromJson(json.decode(str));
 
-String connectStateBeanToJson(ConnectStateBean data) => json.encode(data.toJson());
+String connectStateBeanToJson(ConnectStateBean data) =>
+    json.encode(data.toJson());
 
 class ConnectStateBean {
   bool autoConnect;
@@ -44,7 +49,8 @@ class ConnectStateBean {
     required this.connectState,
   });
 
-  factory ConnectStateBean.fromJson(Map<String, dynamic> json) => ConnectStateBean(
+  factory ConnectStateBean.fromJson(Map<String, dynamic> json) =>
+      ConnectStateBean(
         autoConnect: json["autoConnect"] ?? false,
         connectState: json["connectState"] ?? 0,
       );
@@ -55,9 +61,11 @@ class ConnectStateBean {
       };
 }
 
-ConnectDeviceBean connectDeviceBeanFromJson(String str) => ConnectDeviceBean.fromJson(json.decode(str));
+ConnectDeviceBean connectDeviceBeanFromJson(String str) =>
+    ConnectDeviceBean.fromJson(json.decode(str));
 
-String connectDeviceBeanToJson(ConnectDeviceBean data) => json.encode(data.toJson());
+String connectDeviceBeanToJson(ConnectDeviceBean data) =>
+    json.encode(data.toJson());
 
 class ConnectDeviceBean {
   ConnectDeviceBean({
@@ -70,7 +78,8 @@ class ConnectDeviceBean {
   dynamic peripheral;
   bool autoConnect;
 
-  factory ConnectDeviceBean.fromJson(Map<String, dynamic> json) => ConnectDeviceBean(
+  factory ConnectDeviceBean.fromJson(Map<String, dynamic> json) =>
+      ConnectDeviceBean(
         address: json["address"],
         peripheral: json["peripheral"] ?? " ",
         autoConnect: json["autoConnect"] ?? false,
@@ -83,7 +92,8 @@ class ConnectDeviceBean {
       };
 }
 
-BleScanBean bleScanBeanFromJson(String str) => BleScanBean.fromJson(json.decode(str));
+BleScanBean bleScanBeanFromJson(String str) =>
+    BleScanBean.fromJson(json.decode(str));
 
 String bleScanEventToJson(BleScanBean data) => json.encode(data.toJson());
 
@@ -123,9 +133,11 @@ class BleScanBean {
       };
 }
 
-CheckFirmwareVersionBean checkFirmwareVersionBeanFromJson(String str) => CheckFirmwareVersionBean.fromJson(json.decode(str));
+CheckFirmwareVersionBean checkFirmwareVersionBeanFromJson(String str) =>
+    CheckFirmwareVersionBean.fromJson(json.decode(str));
 
-String checkFirmwareVersionBeanToJson(CheckFirmwareVersionBean data) => json.encode(data.toJson());
+String checkFirmwareVersionBeanToJson(CheckFirmwareVersionBean data) =>
+    json.encode(data.toJson());
 
 class CheckFirmwareVersionBean {
   CheckFirmwareVersionBean({
@@ -136,8 +148,10 @@ class CheckFirmwareVersionBean {
   FirmwareVersionBean? firmwareVersionInfo;
   bool? isLatestVersion;
 
-  factory CheckFirmwareVersionBean.fromJson(Map<String, dynamic> json) => CheckFirmwareVersionBean(
-        firmwareVersionInfo: FirmwareVersionBean.fromJson(json["firmwareVersionInfo"] ?? {}),
+  factory CheckFirmwareVersionBean.fromJson(Map<String, dynamic> json) =>
+      CheckFirmwareVersionBean(
+        firmwareVersionInfo:
+            FirmwareVersionBean.fromJson(json["firmwareVersionInfo"] ?? {}),
         isLatestVersion: json["isLatestVersion"] ?? false,
       );
 
@@ -147,9 +161,11 @@ class CheckFirmwareVersionBean {
       };
 }
 
-FirmwareVersionBean firmwareVersionInfoFromJson(String str) => FirmwareVersionBean.fromJson(json.decode(str));
+FirmwareVersionBean firmwareVersionInfoFromJson(String str) =>
+    FirmwareVersionBean.fromJson(json.decode(str));
 
-String firmwareVersionInfoToJson(FirmwareVersionBean data) => json.encode(data.toJson());
+String firmwareVersionInfoToJson(FirmwareVersionBean data) =>
+    json.encode(data.toJson());
 
 class FirmwareVersionBean {
   FirmwareVersionBean({
@@ -168,7 +184,8 @@ class FirmwareVersionBean {
   int? type;
   String? version;
 
-  factory FirmwareVersionBean.fromJson(Map<String, dynamic> json) => FirmwareVersionBean(
+  factory FirmwareVersionBean.fromJson(Map<String, dynamic> json) =>
+      FirmwareVersionBean(
         changeNotes: json["changeNotes"],
         changeNotesEn: json["changeNotesEn"],
         mcu: json["mcu"],
@@ -222,9 +239,11 @@ class UserBean {
       };
 }
 
-TodayWeatherBean todayWeatherBeanFromJson(String str) => TodayWeatherBean.fromJson(json.decode(str));
+TodayWeatherBean todayWeatherBeanFromJson(String str) =>
+    TodayWeatherBean.fromJson(json.decode(str));
 
-String todayWeatherBeanToJson(TodayWeatherBean data) => json.encode(data.toJson());
+String todayWeatherBeanToJson(TodayWeatherBean data) =>
+    json.encode(data.toJson());
 
 class TodayWeatherBean {
   TodayWeatherBean({
@@ -243,7 +262,8 @@ class TodayWeatherBean {
   int? temp;
   int? weatherId;
 
-  factory TodayWeatherBean.fromJson(Map<String, dynamic> json) => TodayWeatherBean(
+  factory TodayWeatherBean.fromJson(Map<String, dynamic> json) =>
+      TodayWeatherBean(
         city: json["city"] ?? "",
         lunar: json["lunar"] ?? "",
         festival: json["festival"] ?? "",
@@ -262,9 +282,11 @@ class TodayWeatherBean {
       };
 }
 
-FutureWeatherListBean futureWeatherListBeanFromJson(String str) => FutureWeatherListBean.fromJson(json.decode(str));
+FutureWeatherListBean futureWeatherListBeanFromJson(String str) =>
+    FutureWeatherListBean.fromJson(json.decode(str));
 
-String futureWeatherListBeanToJson(FutureWeatherListBean data) => json.encode(data.toJson());
+String futureWeatherListBeanToJson(FutureWeatherListBean data) =>
+    json.encode(data.toJson());
 
 class FutureWeatherListBean {
   FutureWeatherListBean({
@@ -273,8 +295,10 @@ class FutureWeatherListBean {
 
   List<FutureWeatherBean> future;
 
-  factory FutureWeatherListBean.fromJson(Map<String, dynamic> json) => FutureWeatherListBean(
-        future: List<FutureWeatherBean>.from(json["future"].map((x) => FutureWeatherBean.fromJson(x))),
+  factory FutureWeatherListBean.fromJson(Map<String, dynamic> json) =>
+      FutureWeatherListBean(
+        future: List<FutureWeatherBean>.from(
+            json["future"].map((x) => FutureWeatherBean.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -293,7 +317,8 @@ class FutureWeatherBean {
   int lowTemperature;
   int highTemperature;
 
-  factory FutureWeatherBean.fromJson(Map<String, dynamic> json) => FutureWeatherBean(
+  factory FutureWeatherBean.fromJson(Map<String, dynamic> json) =>
+      FutureWeatherBean(
         weatherId: json["weatherId"],
         lowTemperature: json["lowTemperature"],
         highTemperature: json["highTemperature"],
@@ -306,28 +331,42 @@ class FutureWeatherBean {
       };
 }
 
-StepsDetailBean stepsDetailBeanFromJson(String str) => StepsDetailBean.fromJson(json.decode(str));
+StepsDetailBean stepsDetailBeanFromJson(String str) =>
+    StepsDetailBean.fromJson(json.decode(str));
 
-String stepsDetailBeanToJson(StepsDetailBean data) => json.encode(data.toJson());
+String stepsDetailBeanToJson(StepsDetailBean data) =>
+    json.encode(data.toJson());
 
 class StepsDetailBean {
-  StepsDetailBean({required this.type, required this.stepsCategoryInfo, required this.actionDetailsInfo});
+  StepsDetailBean(
+      {required this.type,
+      required this.stepsCategoryInfo,
+      required this.actionDetailsInfo});
 
   int type;
   StepsCategoryBean? stepsCategoryInfo;
   ActionDetailsBean? actionDetailsInfo;
 
-  factory StepsDetailBean.fromJson(Map<String, dynamic> json) => StepsDetailBean(
-      type: json["type"],
-      stepsCategoryInfo: StepsCategoryBean.fromJson(json["stepsCategoryInfo"] ?? {}),
-      actionDetailsInfo: ActionDetailsBean.fromJson(json["actionDetailsInfo"] ?? {}));
+  factory StepsDetailBean.fromJson(Map<String, dynamic> json) =>
+      StepsDetailBean(
+          type: json["type"],
+          stepsCategoryInfo:
+              StepsCategoryBean.fromJson(json["stepsCategoryInfo"] ?? {}),
+          actionDetailsInfo:
+              ActionDetailsBean.fromJson(json["actionDetailsInfo"] ?? {}));
 
-  Map<String, dynamic> toJson() => {"type": type, "stepsCategoryInfo": stepsCategoryInfo!.toJson(), "actionDetailsInfo": actionDetailsInfo!.toJson()};
+  Map<String, dynamic> toJson() => {
+        "type": type,
+        "stepsCategoryInfo": stepsCategoryInfo!.toJson(),
+        "actionDetailsInfo": actionDetailsInfo!.toJson()
+      };
 }
 
-StepsCategoryBean stepsCategoryBeanFromJson(String str) => StepsCategoryBean.fromJson(json.decode(str));
+StepsCategoryBean stepsCategoryBeanFromJson(String str) =>
+    StepsCategoryBean.fromJson(json.decode(str));
 
-String stepsCategoryBeanToJson(StepsCategoryBean data) => json.encode(data.toJson());
+String stepsCategoryBeanToJson(StepsCategoryBean data) =>
+    json.encode(data.toJson());
 
 class StepsCategoryBean {
   StepsCategoryBean({
@@ -340,7 +379,8 @@ class StepsCategoryBean {
   int? timeInterval;
   List<int>? stepsList;
 
-  factory StepsCategoryBean.fromJson(Map<String, dynamic> json) => StepsCategoryBean(
+  factory StepsCategoryBean.fromJson(Map<String, dynamic> json) =>
+      StepsCategoryBean(
         historyDay: json["historyDay"] ?? "",
         timeInterval: json["timeInterval"] ?? -1,
         stepsList: List<int>.from((json["stepsList"] ?? []).map((x) => x)),
@@ -353,9 +393,11 @@ class StepsCategoryBean {
       };
 }
 
-ActionDetailsBean actionDetailsBeanFromJson(String str) => ActionDetailsBean.fromJson(json.decode(str));
+ActionDetailsBean actionDetailsBeanFromJson(String str) =>
+    ActionDetailsBean.fromJson(json.decode(str));
 
-String actionDetailsBeanToJson(ActionDetailsBean data) => json.encode(data.toJson());
+String actionDetailsBeanToJson(ActionDetailsBean data) =>
+    json.encode(data.toJson());
 
 class ActionDetailsBean {
   ActionDetailsBean({
@@ -370,11 +412,14 @@ class ActionDetailsBean {
   List<int>? distanceList;
   List<int>? caloriesList;
 
-  factory ActionDetailsBean.fromJson(Map<String, dynamic> json) => ActionDetailsBean(
+  factory ActionDetailsBean.fromJson(Map<String, dynamic> json) =>
+      ActionDetailsBean(
         historyDay: json["historyDay"] ?? "",
         stepsList: List<int>.from((json["stepsList"] ?? []).map((x) => x)),
-        distanceList: List<int>.from((json["distanceList"] ?? []).map((x) => x)),
-        caloriesList: List<int>.from((json["caloriesList"] ?? []).map((x) => x)),
+        distanceList:
+            List<int>.from((json["distanceList"] ?? []).map((x) => x)),
+        caloriesList:
+            List<int>.from((json["caloriesList"] ?? []).map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
@@ -385,9 +430,11 @@ class ActionDetailsBean {
       };
 }
 
-HistorySleepBean historySleepBeanFromJson(String str) => HistorySleepBean.fromJson(json.decode(str));
+HistorySleepBean historySleepBeanFromJson(String str) =>
+    HistorySleepBean.fromJson(json.decode(str));
 
-String historySleepBeanToJson(HistorySleepBean data) => json.encode(data.toJson());
+String historySleepBeanToJson(HistorySleepBean data) =>
+    json.encode(data.toJson());
 
 class HistorySleepBean {
   HistorySleepBean({
@@ -398,7 +445,8 @@ class HistorySleepBean {
   int? timeType;
   SleepInfo? sleepInfo;
 
-  factory HistorySleepBean.fromJson(Map<String, dynamic> json) => HistorySleepBean(
+  factory HistorySleepBean.fromJson(Map<String, dynamic> json) =>
+      HistorySleepBean(
         timeType: json["timeType"] ?? -1,
         sleepInfo: SleepInfo.fromJson(json["sleepInfo"] ?? {}),
       );
@@ -414,7 +462,11 @@ SleepBean sleepBeanFromJson(String str) => SleepBean.fromJson(json.decode(str));
 String sleepBeanToJson(SleepBean data) => json.encode(data.toJson());
 
 class SleepBean {
-  SleepBean({required this.type, required this.sleepInfo, required this.historySleep, required this.goalSleepTime});
+  SleepBean(
+      {required this.type,
+      required this.sleepInfo,
+      required this.historySleep,
+      required this.goalSleepTime});
 
   int type;
   SleepInfo? sleepInfo;
@@ -428,8 +480,12 @@ class SleepBean {
         goalSleepTime: json["goalSleepTime"] ?? -1,
       );
 
-  Map<String, dynamic> toJson() =>
-      {"type": type, "sleepInfo": sleepInfo!.toJson(), "historySleep": historySleep!.toJson(), "goalSleepTime": goalSleepTime!};
+  Map<String, dynamic> toJson() => {
+        "type": type,
+        "sleepInfo": sleepInfo!.toJson(),
+        "historySleep": historySleep!.toJson(),
+        "goalSleepTime": goalSleepTime!
+      };
 }
 
 SleepInfo sleepInfoFromJson(String str) => SleepInfo.fromJson(json.decode(str));
@@ -464,7 +520,8 @@ class SleepInfo {
         lightTime: json["lightTime"],
         soberTime: json["soberTime"],
         remTime: json["remTime"],
-        details: List<DetailBean>.from((json["details"] ?? []).map((e) => DetailBean.fromJson(e))),
+        details: List<DetailBean>.from(
+            (json["details"] ?? []).map((e) => DetailBean.fromJson(e))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -477,7 +534,8 @@ class SleepInfo {
       };
 }
 
-DetailBean detailBeanFromJson(String str) => DetailBean.fromJson(json.decode(str));
+DetailBean detailBeanFromJson(String str) =>
+    DetailBean.fromJson(json.decode(str));
 
 String detailBeanToJson(DetailBean data) => json.encode(data.toJson());
 
@@ -509,7 +567,8 @@ class DetailBean {
       };
 }
 
-PeriodTimeBean periodTimeBeanFromJson(String str) => PeriodTimeBean.fromJson(json.decode(str));
+PeriodTimeBean periodTimeBeanFromJson(String str) =>
+    PeriodTimeBean.fromJson(json.decode(str));
 
 String periodTimeBeanToJson(PeriodTimeBean data) => json.encode(data.toJson());
 
@@ -541,9 +600,11 @@ class PeriodTimeBean {
       };
 }
 
-WatchFaceLayoutBean watchFaceLayoutBeanFromJson(String str) => WatchFaceLayoutBean.fromJson(json.decode(str));
+WatchFaceLayoutBean watchFaceLayoutBeanFromJson(String str) =>
+    WatchFaceLayoutBean.fromJson(json.decode(str));
 
-String watchFaceLayoutBeanToJson(WatchFaceLayoutBean data) => json.encode(data.toJson());
+String watchFaceLayoutBeanToJson(WatchFaceLayoutBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceLayoutBean {
   WatchFaceLayoutBean({
@@ -631,17 +692,19 @@ class AlarmBean {
   bool isNew;
 
   factory AlarmBean.fromJson(Map<String, dynamic> json) => AlarmBean(
-    list: List<AlarmClockBean>.from((json["list"] ?? []).map((e) => AlarmClockBean.fromJson(e))),
-    isNew: json["isNew"],
-  );
+        list: List<AlarmClockBean>.from(
+            (json["list"] ?? []).map((e) => AlarmClockBean.fromJson(e))),
+        isNew: json["isNew"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "list": list,
-    "isNew": isNew,
-  };
+        "list": list,
+        "isNew": isNew,
+      };
 }
 
-AlarmClockBean alarmClockBeanFromJson(String str) => AlarmClockBean.fromJson(json.decode(str));
+AlarmClockBean alarmClockBeanFromJson(String str) =>
+    AlarmClockBean.fromJson(json.decode(str));
 
 String alarmClockBeanToJson(AlarmClockBean data) => json.encode(data.toJson());
 
@@ -691,9 +754,11 @@ class AlarmClockBean {
       };
 }
 
-SupportWatchFaceBean supportWatchFaceBeanFromJson(String str) => SupportWatchFaceBean.fromJson(json.decode(str));
+SupportWatchFaceBean supportWatchFaceBeanFromJson(String str) =>
+    SupportWatchFaceBean.fromJson(json.decode(str));
 
-String supportWatchFaceBeanToJson(SupportWatchFaceBean data) => json.encode(data.toJson());
+String supportWatchFaceBeanToJson(SupportWatchFaceBean data) =>
+    json.encode(data.toJson());
 
 class SupportWatchFaceBean {
   SupportWatchFaceBean({
@@ -708,11 +773,15 @@ class SupportWatchFaceBean {
   SifliSupportWatchFaceInfo? sifliSupportWatchFaceInfo;
   JieliSupportWatchFaceInfo? jieliSupportWatchFaceInfo;
 
-  factory SupportWatchFaceBean.fromJson(Map<String, dynamic> json) => SupportWatchFaceBean(
+  factory SupportWatchFaceBean.fromJson(Map<String, dynamic> json) =>
+      SupportWatchFaceBean(
         type: json["type"],
-        supportWatchFaceInfo: SupportWatchFaceInfo.fromJson(json["supportWatchFaceInfo"] ?? {}),
-        sifliSupportWatchFaceInfo: SifliSupportWatchFaceInfo.fromJson(json["sifliSupportWatchFaceInfo"] ?? {}),
-        jieliSupportWatchFaceInfo: JieliSupportWatchFaceInfo.fromJson(json["jieliSupportWatchFaceInfo"] ?? {}),
+        supportWatchFaceInfo:
+            SupportWatchFaceInfo.fromJson(json["supportWatchFaceInfo"] ?? {}),
+        sifliSupportWatchFaceInfo: SifliSupportWatchFaceInfo.fromJson(
+            json["sifliSupportWatchFaceInfo"] ?? {}),
+        jieliSupportWatchFaceInfo: JieliSupportWatchFaceInfo.fromJson(
+            json["jieliSupportWatchFaceInfo"] ?? {}),
       );
 
   Map<String, dynamic> toJson() => {
@@ -723,9 +792,11 @@ class SupportWatchFaceBean {
       };
 }
 
-SupportWatchFaceInfo supportWatchFaceInfoFromJson(String str) => SupportWatchFaceInfo.fromJson(json.decode(str));
+SupportWatchFaceInfo supportWatchFaceInfoFromJson(String str) =>
+    SupportWatchFaceInfo.fromJson(json.decode(str));
 
-String supportWatchFaceInfoToJson(SupportWatchFaceInfo data) => json.encode(data.toJson());
+String supportWatchFaceInfoToJson(SupportWatchFaceInfo data) =>
+    json.encode(data.toJson());
 
 class SupportWatchFaceInfo {
   SupportWatchFaceInfo({
@@ -736,20 +807,25 @@ class SupportWatchFaceInfo {
   int? displayWatchFace;
   List<int>? supportWatchFaceList;
 
-  factory SupportWatchFaceInfo.fromJson(Map<String, dynamic> json) => SupportWatchFaceInfo(
+  factory SupportWatchFaceInfo.fromJson(Map<String, dynamic> json) =>
+      SupportWatchFaceInfo(
         displayWatchFace: json["displayWatchFace"] ?? -1,
-        supportWatchFaceList: List<int>.from((json["supportWatchFaceList"] ?? []).map((x) => x)),
+        supportWatchFaceList:
+            List<int>.from((json["supportWatchFaceList"] ?? []).map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
         "displayWatchFace": displayWatchFace,
-        "supportWatchFaceList": List<dynamic>.from(supportWatchFaceList!.map((x) => x)),
+        "supportWatchFaceList":
+            List<dynamic>.from(supportWatchFaceList!.map((x) => x)),
       };
 }
 
-SifliSupportWatchFaceInfo sifliSupportWatchFaceInfoFromJson(String str) => SifliSupportWatchFaceInfo.fromJson(json.decode(str));
+SifliSupportWatchFaceInfo sifliSupportWatchFaceInfoFromJson(String str) =>
+    SifliSupportWatchFaceInfo.fromJson(json.decode(str));
 
-String sifliSupportWatchFaceInfoToJson(SifliSupportWatchFaceInfo data) => json.encode(data.toJson());
+String sifliSupportWatchFaceInfoToJson(SifliSupportWatchFaceInfo data) =>
+    json.encode(data.toJson());
 
 class SifliSupportWatchFaceInfo {
   SifliSupportWatchFaceInfo({
@@ -760,9 +836,11 @@ class SifliSupportWatchFaceInfo {
   List<int>? typeList;
   List<SifliWatchFace>? list;
 
-  factory SifliSupportWatchFaceInfo.fromJson(Map<String, dynamic> json) => SifliSupportWatchFaceInfo(
+  factory SifliSupportWatchFaceInfo.fromJson(Map<String, dynamic> json) =>
+      SifliSupportWatchFaceInfo(
         typeList: List<int>.from((json["typeList"] ?? []).map((x) => x)),
-        list: List<SifliWatchFace>.from((json["list"] ?? []).map((x) => SifliWatchFace.fromJson(x))),
+        list: List<SifliWatchFace>.from(
+            (json["list"] ?? []).map((x) => SifliWatchFace.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -791,9 +869,11 @@ class SifliWatchFace {
       };
 }
 
-JieliSupportWatchFaceInfo jieliSupportWatchFaceInfoFromJson(String str) => JieliSupportWatchFaceInfo.fromJson(json.decode(str));
+JieliSupportWatchFaceInfo jieliSupportWatchFaceInfoFromJson(String str) =>
+    JieliSupportWatchFaceInfo.fromJson(json.decode(str));
 
-String jieliSupportWatchFaceInfoToJson(JieliSupportWatchFaceInfo data) => json.encode(data.toJson());
+String jieliSupportWatchFaceInfoToJson(JieliSupportWatchFaceInfo data) =>
+    json.encode(data.toJson());
 
 class JieliSupportWatchFaceInfo {
   JieliSupportWatchFaceInfo({
@@ -806,10 +886,12 @@ class JieliSupportWatchFaceInfo {
   int? watchFaceMaxSize;
   List<int>? supportTypeList;
 
-  factory JieliSupportWatchFaceInfo.fromJson(Map<String, dynamic> json) => JieliSupportWatchFaceInfo(
+  factory JieliSupportWatchFaceInfo.fromJson(Map<String, dynamic> json) =>
+      JieliSupportWatchFaceInfo(
         displayWatchFace: json["displayWatchFace"] ?? -1,
         watchFaceMaxSize: json["watchFaceMaxSize"] ?? -1,
-        supportTypeList: List<int>.from((json["supportTypeList"] ?? []).map((x) => x)),
+        supportTypeList:
+            List<int>.from((json["supportTypeList"] ?? []).map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
@@ -819,9 +901,11 @@ class JieliSupportWatchFaceInfo {
       };
 }
 
-WatchFaceStoreBean watchFaceStoreBeanFromJson(String str) => WatchFaceStoreBean.fromJson(json.decode(str));
+WatchFaceStoreBean watchFaceStoreBeanFromJson(String str) =>
+    WatchFaceStoreBean.fromJson(json.decode(str));
 
-String watchFaceStoreBeanToJson(WatchFaceStoreBean data) => json.encode(data.toJson());
+String watchFaceStoreBeanToJson(WatchFaceStoreBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreBean {
   WatchFaceStoreBean({
@@ -836,7 +920,8 @@ class WatchFaceStoreBean {
   int pageCount;
   int pageIndex;
 
-  factory WatchFaceStoreBean.fromJson(Map<String, dynamic> json) => WatchFaceStoreBean(
+  factory WatchFaceStoreBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreBean(
         watchFaceSupportList: List<int>.from(json["list"].map((x) => x)),
         firmwareVersion: json["firmwareVersion"],
         pageCount: json["pageCount"],
@@ -844,16 +929,19 @@ class WatchFaceStoreBean {
       );
 
   Map<String, dynamic> toJson() => {
-        "watchFaceSupportList": List<dynamic>.from(watchFaceSupportList.map((x) => x)),
+        "watchFaceSupportList":
+            List<dynamic>.from(watchFaceSupportList.map((x) => x)),
         "firmwareVersion": firmwareVersion,
         "pageCount": pageCount,
         "pageIndex": pageIndex,
       };
 }
 
-JieliWatchFaceBean jieliWatchFaceBeanFromJson(String str) => JieliWatchFaceBean.fromJson(json.decode(str));
+JieliWatchFaceBean jieliWatchFaceBeanFromJson(String str) =>
+    JieliWatchFaceBean.fromJson(json.decode(str));
 
-String jieliWatchFaceBeanToJson(JieliWatchFaceBean data) => json.encode(data.toJson());
+String jieliWatchFaceBeanToJson(JieliWatchFaceBean data) =>
+    json.encode(data.toJson());
 
 class JieliWatchFaceBean {
   int? apiVersion;
@@ -864,7 +952,8 @@ class JieliWatchFaceBean {
     required this.feature,
   });
 
-  factory JieliWatchFaceBean.fromJson(Map<String, dynamic> json) => JieliWatchFaceBean(
+  factory JieliWatchFaceBean.fromJson(Map<String, dynamic> json) =>
+      JieliWatchFaceBean(
         apiVersion: json["apiVersion"] ?? -1,
         feature: json["feature"] ?? -1,
       );
@@ -875,9 +964,11 @@ class JieliWatchFaceBean {
       };
 }
 
-WatchFaceStoreTagListBean watchFaceStoreTagListBeanFromJson(String str) => WatchFaceStoreTagListBean.fromJson(json.decode(str));
+WatchFaceStoreTagListBean watchFaceStoreTagListBeanFromJson(String str) =>
+    WatchFaceStoreTagListBean.fromJson(json.decode(str));
 
-String watchFaceStoreTagListBeanToJson(WatchFaceStoreTagListBean data) => json.encode(data.toJson());
+String watchFaceStoreTagListBeanToJson(WatchFaceStoreTagListBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreTagListBean {
   String storeType;
@@ -900,7 +991,8 @@ class WatchFaceStoreTagListBean {
     required this.feature,
   });
 
-  factory WatchFaceStoreTagListBean.fromJson(Map<String, dynamic> json) => WatchFaceStoreTagListBean(
+  factory WatchFaceStoreTagListBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreTagListBean(
         storeType: json["storeType"],
         typeList: List<int>.from(json["typeList"].map((x) => x)),
         firmwareVersion: json["firmwareVersion"],
@@ -923,9 +1015,11 @@ class WatchFaceStoreTagListBean {
       };
 }
 
-WatchFaceStoreTagListResult watchFaceStoreTagListResultFromJson(String str) => WatchFaceStoreTagListResult.fromJson(json.decode(str));
+WatchFaceStoreTagListResult watchFaceStoreTagListResultFromJson(String str) =>
+    WatchFaceStoreTagListResult.fromJson(json.decode(str));
 
-String watchFaceStoreTagListResultToJson(WatchFaceStoreTagListResult data) => json.encode(data.toJson());
+String watchFaceStoreTagListResultToJson(WatchFaceStoreTagListResult data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreTagListResult {
   List<WatchFaceStoreTagInfo>? list;
@@ -936,8 +1030,10 @@ class WatchFaceStoreTagListResult {
     required this.error,
   });
 
-  factory WatchFaceStoreTagListResult.fromJson(Map<String, dynamic> json) => WatchFaceStoreTagListResult(
-        list: List<WatchFaceStoreTagInfo>.from((json["list"] ?? []).map((x) => WatchFaceStoreTagInfo.fromJson(x))),
+  factory WatchFaceStoreTagListResult.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreTagListResult(
+        list: List<WatchFaceStoreTagInfo>.from(
+            (json["list"] ?? []).map((x) => WatchFaceStoreTagInfo.fromJson(x))),
         error: json["error"] ?? "",
       );
 
@@ -947,29 +1043,40 @@ class WatchFaceStoreTagListResult {
       };
 }
 
-WatchFaceStoreTagInfo watchFaceStoreTagInfoFromJson(String str) => WatchFaceStoreTagInfo.fromJson(json.decode(str));
+WatchFaceStoreTagInfo watchFaceStoreTagInfoFromJson(String str) =>
+    WatchFaceStoreTagInfo.fromJson(json.decode(str));
 
-String watchFaceStoreTagInfoToJson(WatchFaceStoreTagInfo data) => json.encode(data.toJson());
+String watchFaceStoreTagInfoToJson(WatchFaceStoreTagInfo data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreTagInfo {
   int? tagId;
   String? tagName;
   List<WatchFaceStoreItem>? list;
 
-  WatchFaceStoreTagInfo({required this.tagId, required this.tagName, required this.list});
+  WatchFaceStoreTagInfo(
+      {required this.tagId, required this.tagName, required this.list});
 
-  factory WatchFaceStoreTagInfo.fromJson(Map<String, dynamic> json) => WatchFaceStoreTagInfo(
+  factory WatchFaceStoreTagInfo.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreTagInfo(
         tagId: json["tagId"] ?? -1,
         tagName: json["tagName"] ?? "",
-        list: List<WatchFaceStoreItem>.from((json["list"] ?? []).map((x) => WatchFaceStoreItem.fromJson(x))),
+        list: List<WatchFaceStoreItem>.from(
+            (json["list"] ?? []).map((x) => WatchFaceStoreItem.fromJson(x))),
       );
 
-  Map<String, dynamic> toJson() => {"tagId": tagId, "tagName": tagName, "list": List<WatchFaceStoreItem>.from(list!.map((x) => x))};
+  Map<String, dynamic> toJson() => {
+        "tagId": tagId,
+        "tagName": tagName,
+        "list": List<WatchFaceStoreItem>.from(list!.map((x) => x))
+      };
 }
 
-WatchFaceStoreItem watchFaceStoreItemFromJson(String str) => WatchFaceStoreItem.fromJson(json.decode(str));
+WatchFaceStoreItem watchFaceStoreItemFromJson(String str) =>
+    WatchFaceStoreItem.fromJson(json.decode(str));
 
-String watchFaceStoreItemToJson(WatchFaceStoreItem data) => json.encode(data.toJson());
+String watchFaceStoreItemToJson(WatchFaceStoreItem data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreItem {
   int? id;
@@ -986,7 +1093,8 @@ class WatchFaceStoreItem {
     required this.preview,
   });
 
-  factory WatchFaceStoreItem.fromJson(Map<String, dynamic> json) => WatchFaceStoreItem(
+  factory WatchFaceStoreItem.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreItem(
         id: json["id"] ?? -1,
         name: json["name"] ?? "",
         size: json["size"] ?? -1,
@@ -1003,17 +1111,21 @@ class WatchFaceStoreItem {
       };
 }
 
-WatchFaceStoreListBean watchFaceStoreListBeanFromJson(String str) => WatchFaceStoreListBean.fromJson(json.decode(str));
+WatchFaceStoreListBean watchFaceStoreListBeanFromJson(String str) =>
+    WatchFaceStoreListBean.fromJson(json.decode(str));
 
-String watchFaceStoreListBeanToJson(WatchFaceStoreListBean data) => json.encode(data.toJson());
+String watchFaceStoreListBeanToJson(WatchFaceStoreListBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreListBean {
   WatchFaceStoreTagListBean watchFaceStoreTagList;
   int tagId;
 
-  WatchFaceStoreListBean({required this.watchFaceStoreTagList, required this.tagId});
+  WatchFaceStoreListBean(
+      {required this.watchFaceStoreTagList, required this.tagId});
 
-  factory WatchFaceStoreListBean.fromJson(Map<String, dynamic> json) => WatchFaceStoreListBean(
+  factory WatchFaceStoreListBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreListBean(
         watchFaceStoreTagList: json["watchFaceStoreTagList"],
         tagId: json["tagId"],
       );
@@ -1024,9 +1136,11 @@ class WatchFaceStoreListBean {
       };
 }
 
-WatchFaceStoreTypeBean watchFaceStoreTypeBeanFromJson(String str) => WatchFaceStoreTypeBean.fromJson(json.decode(str));
+WatchFaceStoreTypeBean watchFaceStoreTypeBeanFromJson(String str) =>
+    WatchFaceStoreTypeBean.fromJson(json.decode(str));
 
-String watchFaceStoreTypeBeanToJson(WatchFaceStoreTypeBean data) => json.encode(data.toJson());
+String watchFaceStoreTypeBeanToJson(WatchFaceStoreTypeBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreTypeBean {
   String storeType;
@@ -1046,7 +1160,8 @@ class WatchFaceStoreTypeBean {
       required this.feature,
       required this.maxSize});
 
-  factory WatchFaceStoreTypeBean.fromJson(Map<String, dynamic> json) => WatchFaceStoreTypeBean(
+  factory WatchFaceStoreTypeBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreTypeBean(
         storeType: json["storeType"],
         id: json["id"],
         typeList: json["typeList"],
@@ -1067,9 +1182,11 @@ class WatchFaceStoreTypeBean {
       };
 }
 
-WatchFaceDetailResultBean watchFaceDetailResultBeanFromJson(String str) => WatchFaceDetailResultBean.fromJson(json.decode(str));
+WatchFaceDetailResultBean watchFaceDetailResultBeanFromJson(String str) =>
+    WatchFaceDetailResultBean.fromJson(json.decode(str));
 
-String watchFaceDetailResultBeanToJson(WatchFaceDetailResultBean data) => json.encode(data.toJson());
+String watchFaceDetailResultBeanToJson(WatchFaceDetailResultBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceDetailResultBean {
   WatchFaceBean? watchFaceBean;
@@ -1082,9 +1199,11 @@ class WatchFaceDetailResultBean {
     required this.error,
   });
 
-  factory WatchFaceDetailResultBean.fromJson(Map<String, dynamic> json) => WatchFaceDetailResultBean(
+  factory WatchFaceDetailResultBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceDetailResultBean(
         watchFaceBean: WatchFaceBean.fromJson(json["watchFaceBean"] ?? {}),
-        watchFaceDetailsInfo: WatchFaceDetailsBean.fromJson(json["watchFaceDetailsInfo"] ?? {}),
+        watchFaceDetailsInfo:
+            WatchFaceDetailsBean.fromJson(json["watchFaceDetailsInfo"] ?? {}),
         error: json["error"] ?? "",
       );
 
@@ -1095,7 +1214,8 @@ class WatchFaceDetailResultBean {
       };
 }
 
-WatchFaceBean watchFaceBeanFromJson(String str) => WatchFaceBean.fromJson(json.decode(str));
+WatchFaceBean watchFaceBeanFromJson(String str) =>
+    WatchFaceBean.fromJson(json.decode(str));
 
 String watchFaceBeanToJson(WatchFaceBean data) => json.encode(data.toJson());
 
@@ -1123,9 +1243,11 @@ class WatchFaceBean {
       };
 }
 
-WatchFaceDetailsBean watchFaceDetailsBeanFromJson(String str) => WatchFaceDetailsBean.fromJson(json.decode(str));
+WatchFaceDetailsBean watchFaceDetailsBeanFromJson(String str) =>
+    WatchFaceDetailsBean.fromJson(json.decode(str));
 
-String watchFaceDetailsBeanToJson(WatchFaceDetailsBean data) => json.encode(data.toJson());
+String watchFaceDetailsBeanToJson(WatchFaceDetailsBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceDetailsBean {
   int id;
@@ -1150,7 +1272,8 @@ class WatchFaceDetailsBean {
     required this.recommendWatchFaceList,
   });
 
-  factory WatchFaceDetailsBean.fromJson(Map<String, dynamic> json) => WatchFaceDetailsBean(
+  factory WatchFaceDetailsBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceDetailsBean(
         id: json["id"] ?? -1,
         name: json["name"] ?? "",
         download: json["download"] ?? -1,
@@ -1159,8 +1282,9 @@ class WatchFaceDetailsBean {
         preview: json["preview"] ?? "",
         remarkCn: json["remarkCn"] ?? "",
         remarkEn: json["remarkEn"] ?? "",
-        recommendWatchFaceList:
-            List<RecommendWatchFaceBean>.from((json["recommendWatchFaceList"] ?? []).map((x) => RecommendWatchFaceBean.fromJson(x))),
+        recommendWatchFaceList: List<RecommendWatchFaceBean>.from(
+            (json["recommendWatchFaceList"] ?? [])
+                .map((x) => RecommendWatchFaceBean.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -1172,7 +1296,8 @@ class WatchFaceDetailsBean {
         "preview": preview,
         "remarkCn": remarkCn,
         "remarkEn": remarkEn,
-        "recommendWatchFaceList": List<dynamic>.from(recommendWatchFaceList.map((x) => x)),
+        "recommendWatchFaceList":
+            List<dynamic>.from(recommendWatchFaceList.map((x) => x)),
       };
 }
 
@@ -1189,7 +1314,8 @@ class RecommendWatchFaceBean {
     required this.preview,
   });
 
-  factory RecommendWatchFaceBean.fromJson(Map<String, dynamic> json) => RecommendWatchFaceBean(
+  factory RecommendWatchFaceBean.fromJson(Map<String, dynamic> json) =>
+      RecommendWatchFaceBean(
         id: json["id"] ?? -1,
         name: json["name"] ?? "",
         size: json["size"] ?? -1,
@@ -1204,9 +1330,11 @@ class RecommendWatchFaceBean {
       };
 }
 
-WatchFaceBackgroundBean watchFaceBackgroundBeanFromJson(String str) => WatchFaceBackgroundBean.fromJson(json.decode(str));
+WatchFaceBackgroundBean watchFaceBackgroundBeanFromJson(String str) =>
+    WatchFaceBackgroundBean.fromJson(json.decode(str));
 
-String watchFaceBackgroundBeanToJson(WatchFaceBackgroundBean data) => json.encode(data.toJson());
+String watchFaceBackgroundBeanToJson(WatchFaceBackgroundBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceBackgroundBean {
   WatchFaceBackgroundBean({
@@ -1229,7 +1357,8 @@ class WatchFaceBackgroundBean {
   static const int defaultTimeout = 30;
   static const int timeout = 30;
 
-  factory WatchFaceBackgroundBean.fromJson(Map<String, dynamic> json) => WatchFaceBackgroundBean(
+  factory WatchFaceBackgroundBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceBackgroundBean(
         bitmap: json["bitmap"],
         thumbBitmap: json["thumbBitmap"],
         type: json["type"],
@@ -1250,9 +1379,11 @@ class WatchFaceBackgroundBean {
       };
 }
 
-CustomizeWatchFaceBean customizeWatchFaceBeanFromJson(String str) => CustomizeWatchFaceBean.fromJson(json.decode(str));
+CustomizeWatchFaceBean customizeWatchFaceBeanFromJson(String str) =>
+    CustomizeWatchFaceBean.fromJson(json.decode(str));
 
-String customizeWatchFaceBeanToJson(CustomizeWatchFaceBean data) => json.encode(data.toJson());
+String customizeWatchFaceBeanToJson(CustomizeWatchFaceBean data) =>
+    json.encode(data.toJson());
 
 class CustomizeWatchFaceBean {
   CustomizeWatchFaceBean({
@@ -1263,7 +1394,8 @@ class CustomizeWatchFaceBean {
   int index;
   String file;
 
-  factory CustomizeWatchFaceBean.fromJson(Map<String, dynamic> json) => CustomizeWatchFaceBean(
+  factory CustomizeWatchFaceBean.fromJson(Map<String, dynamic> json) =>
+      CustomizeWatchFaceBean(
         index: json["index"],
         file: json["file"],
       );
@@ -1274,7 +1406,8 @@ class CustomizeWatchFaceBean {
       };
 }
 
-WatchFaceInfo watchFaceInfoFromJson(String str) => WatchFaceInfo.fromJson(json.decode(str));
+WatchFaceInfo watchFaceInfoFromJson(String str) =>
+    WatchFaceInfo.fromJson(json.decode(str));
 
 String watchFaceInfoToJson(WatchFaceInfo data) => json.encode(data.toJson());
 
@@ -1295,7 +1428,8 @@ class WatchFaceInfo {
         total: json["total"],
         prePage: json["prePage"],
         pageIndex: json["pageIndex"],
-        list: List<WatchFaceBean>.from(json["list"].map((x) => WatchFaceBean.fromJson(x))),
+        list: List<WatchFaceBean>.from(
+            json["list"].map((x) => WatchFaceBean.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -1306,9 +1440,11 @@ class WatchFaceInfo {
       };
 }
 
-StepsChangeBean stepsChangeBeanFromJson(String str) => StepsChangeBean.fromJson(json.decode(str));
+StepsChangeBean stepsChangeBeanFromJson(String str) =>
+    StepsChangeBean.fromJson(json.decode(str));
 
-String stepsChangeBeanToJson(StepsChangeBean data) => json.encode(data.toJson());
+String stepsChangeBeanToJson(StepsChangeBean data) =>
+    json.encode(data.toJson());
 
 class StepsChangeBean {
   StepsChangeBean({
@@ -1321,16 +1457,23 @@ class StepsChangeBean {
   StepInfoBean? stepsInfo;
   HistoryStepInfoBean? historyStepsInfo;
 
-  factory StepsChangeBean.fromJson(Map<String, dynamic> json) => StepsChangeBean(
+  factory StepsChangeBean.fromJson(Map<String, dynamic> json) =>
+      StepsChangeBean(
         type: json["type"],
         stepsInfo: StepInfoBean.fromJson(json["stepsInfo"] ?? {}),
-        historyStepsInfo: HistoryStepInfoBean.fromJson(json["historyStepsInfo"] ?? {}),
+        historyStepsInfo:
+            HistoryStepInfoBean.fromJson(json["historyStepsInfo"] ?? {}),
       );
 
-  Map<String, dynamic> toJson() => {"type": type, "stepsInfo": stepsInfo!.toJson(), "historyStepsInfo": historyStepsInfo!.toJson()};
+  Map<String, dynamic> toJson() => {
+        "type": type,
+        "stepsInfo": stepsInfo!.toJson(),
+        "historyStepsInfo": historyStepsInfo!.toJson()
+      };
 }
 
-StepInfoBean stepInfoBeanFromJson(String str) => StepInfoBean.fromJson(json.decode(str));
+StepInfoBean stepInfoBeanFromJson(String str) =>
+    StepInfoBean.fromJson(json.decode(str));
 
 String stepInfoBeanToJson(StepInfoBean data) => json.encode(data.toJson());
 
@@ -1362,9 +1505,11 @@ class StepInfoBean {
       };
 }
 
-HistoryStepInfoBean historyStepInfoBeanFromJson(String str) => HistoryStepInfoBean.fromJson(json.decode(str));
+HistoryStepInfoBean historyStepInfoBeanFromJson(String str) =>
+    HistoryStepInfoBean.fromJson(json.decode(str));
 
-String historyStepInfoBeanToJson(HistoryStepInfoBean data) => json.encode(data.toJson());
+String historyStepInfoBeanToJson(HistoryStepInfoBean data) =>
+    json.encode(data.toJson());
 
 class HistoryStepInfoBean {
   HistoryStepInfoBean({
@@ -1375,7 +1520,8 @@ class HistoryStepInfoBean {
   String? historyDay;
   StepInfoBean? stepsInfo;
 
-  factory HistoryStepInfoBean.fromJson(Map<String, dynamic> json) => HistoryStepInfoBean(
+  factory HistoryStepInfoBean.fromJson(Map<String, dynamic> json) =>
+      HistoryStepInfoBean(
         historyDay: json["historyDay"] ?? "",
         stepsInfo: StepInfoBean.fromJson(json["stepsInfo"] ?? {}),
       );
@@ -1386,9 +1532,11 @@ class HistoryStepInfoBean {
       };
 }
 
-HistoryHeartRateBean historyHeartRateBeanFromJson(String str) => HistoryHeartRateBean.fromJson(json.decode(str));
+HistoryHeartRateBean historyHeartRateBeanFromJson(String str) =>
+    HistoryHeartRateBean.fromJson(json.decode(str));
 
-String historyHeartRateBeanToJson(HistoryHeartRateBean data) => json.encode(data.toJson());
+String historyHeartRateBeanToJson(HistoryHeartRateBean data) =>
+    json.encode(data.toJson());
 
 class HistoryHeartRateBean {
   HistoryHeartRateBean({
@@ -1399,7 +1547,8 @@ class HistoryHeartRateBean {
   String date;
   int hr;
 
-  factory HistoryHeartRateBean.fromJson(Map<String, dynamic> json) => HistoryHeartRateBean(
+  factory HistoryHeartRateBean.fromJson(Map<String, dynamic> json) =>
+      HistoryHeartRateBean(
         date: json["date"],
         hr: json["hr"],
       );
@@ -1410,18 +1559,18 @@ class HistoryHeartRateBean {
       };
 }
 
-HeartRateInfo heartRateInfoFromJson(String str) => HeartRateInfo.fromJson(json.decode(str));
+HeartRateInfo heartRateInfoFromJson(String str) =>
+    HeartRateInfo.fromJson(json.decode(str));
 
 String heartRateInfoToJson(HeartRateInfo data) => json.encode(data.toJson());
 
 class HeartRateInfo {
-  HeartRateInfo({
-    required this.startTime,
-    required this.heartRateList,
-    required this.timeInterval,
-    required this.heartRateType,
-    required this.isAllDay
-  });
+  HeartRateInfo(
+      {required this.startTime,
+      required this.heartRateList,
+      required this.timeInterval,
+      required this.heartRateType,
+      required this.isAllDay});
 
   int startTime;
   List<int> heartRateList;
@@ -1431,7 +1580,8 @@ class HeartRateInfo {
 
   factory HeartRateInfo.fromJson(Map<String, dynamic> json) => HeartRateInfo(
         startTime: json["startTime"] ?? 0,
-        heartRateList: List<int>.from((json["heartRateList"] ?? []).map((x) => x)),
+        heartRateList:
+            List<int>.from((json["heartRateList"] ?? []).map((x) => x)),
         timeInterval: json["timeInterval"] ?? 0,
         heartRateType: json["heartRateType"] ?? "",
         isAllDay: json["isAllDay"] ?? 0,
@@ -1446,9 +1596,11 @@ class HeartRateInfo {
       };
 }
 
-TrainingHeartRateBean trainingHeartRateBeanFromJson(String str) => TrainingHeartRateBean.fromJson(json.decode(str));
+TrainingHeartRateBean trainingHeartRateBeanFromJson(String str) =>
+    TrainingHeartRateBean.fromJson(json.decode(str));
 
-String trainingHeartRateBeanToJson(TrainingHeartRateBean data) => json.encode(data.toJson());
+String trainingHeartRateBeanToJson(TrainingHeartRateBean data) =>
+    json.encode(data.toJson());
 
 class TrainingHeartRateBean {
   TrainingHeartRateBean({
@@ -1469,7 +1621,8 @@ class TrainingHeartRateBean {
   int distance;
   int calories;
 
-  factory TrainingHeartRateBean.fromJson(Map<String, dynamic> json) => TrainingHeartRateBean(
+  factory TrainingHeartRateBean.fromJson(Map<String, dynamic> json) =>
+      TrainingHeartRateBean(
         type: json["type"],
         startTime: json["startTime"],
         endTime: json["endTime"],
@@ -1490,9 +1643,11 @@ class TrainingHeartRateBean {
       };
 }
 
-MeasureCompleteBean measureCompleteBeanFromJson(String str) => MeasureCompleteBean.fromJson(json.decode(str));
+MeasureCompleteBean measureCompleteBeanFromJson(String str) =>
+    MeasureCompleteBean.fromJson(json.decode(str));
 
-String measureCompleteBeanToJson(MeasureCompleteBean data) => json.encode(data.toJson());
+String measureCompleteBeanToJson(MeasureCompleteBean data) =>
+    json.encode(data.toJson());
 
 class MeasureCompleteBean {
   MeasureCompleteBean({
@@ -1503,7 +1658,8 @@ class MeasureCompleteBean {
   String? historyDynamicRateType;
   HeartRateInfo? heartRate;
 
-  factory MeasureCompleteBean.fromJson(Map<String, dynamic> json) => MeasureCompleteBean(
+  factory MeasureCompleteBean.fromJson(Map<String, dynamic> json) =>
+      MeasureCompleteBean(
         historyDynamicRateType: json["historyDynamicRateType"] ?? "",
         heartRate: HeartRateInfo.fromJson(json["heartRate"] ?? {}),
       );
@@ -1514,7 +1670,8 @@ class MeasureCompleteBean {
       };
 }
 
-HeartRateBean heartRateBeanFromJson(String str) => HeartRateBean.fromJson(json.decode(str));
+HeartRateBean heartRateBeanFromJson(String str) =>
+    HeartRateBean.fromJson(json.decode(str));
 
 String heartRateBeanToJson(HeartRateBean data) => json.encode(data.toJson());
 
@@ -1541,26 +1698,36 @@ class HeartRateBean {
         type: json["type"],
         measuring: json["measuring"] ?? -1,
         onceMeasureComplete: json["onceMeasureComplete"] ?? -1,
-        historyHrList: List<HistoryHeartRateBean>.from((json["historyHrList"] ?? []).map((x) => HistoryHeartRateBean.fromJson(x))),
-        measureComplete: MeasureCompleteBean.fromJson(json["measureComplete"] ?? {}),
-        hour24MeasureResult: HeartRateInfo.fromJson(json["hour24MeasureResult"] ?? {}),
-        trainingList: List<TrainingHeartRateBean>.from((json["trainingList"] ?? []).map((x) => TrainingHeartRateBean.fromJson(x))),
+        historyHrList: List<HistoryHeartRateBean>.from(
+            (json["historyHrList"] ?? [])
+                .map((x) => HistoryHeartRateBean.fromJson(x))),
+        measureComplete:
+            MeasureCompleteBean.fromJson(json["measureComplete"] ?? {}),
+        hour24MeasureResult:
+            HeartRateInfo.fromJson(json["hour24MeasureResult"] ?? {}),
+        trainingList: List<TrainingHeartRateBean>.from(
+            (json["trainingList"] ?? [])
+                .map((x) => TrainingHeartRateBean.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "type": type,
         "measuring": measuring,
         "onceMeasureComplete": onceMeasureComplete,
-        "historyHrList": List<dynamic>.from(historyHrList!.map((x) => x.toJson())),
+        "historyHrList":
+            List<dynamic>.from(historyHrList!.map((x) => x.toJson())),
         "measureComplete": measureComplete!.toJson(),
         "hour24MeasureResult": hour24MeasureResult!.toJson(),
-        "trainingList": List<dynamic>.from(trainingList!.map((x) => x.toJson())),
+        "trainingList":
+            List<dynamic>.from(trainingList!.map((x) => x.toJson())),
       };
 }
 
-BloodPressureChangeBean bloodPressureChangeBeanFromJson(String str) => BloodPressureChangeBean.fromJson(json.decode(str));
+BloodPressureChangeBean bloodPressureChangeBeanFromJson(String str) =>
+    BloodPressureChangeBean.fromJson(json.decode(str));
 
-String bloodPressureChangeBeanToJson(BloodPressureChangeBean data) => json.encode(data.toJson());
+String bloodPressureChangeBeanToJson(BloodPressureChangeBean data) =>
+    json.encode(data.toJson());
 
 class BloodPressureChangeBean {
   BloodPressureChangeBean({
@@ -1571,7 +1738,8 @@ class BloodPressureChangeBean {
   int? sbp;
   int? dbp;
 
-  factory BloodPressureChangeBean.fromJson(Map<String, dynamic> json) => BloodPressureChangeBean(
+  factory BloodPressureChangeBean.fromJson(Map<String, dynamic> json) =>
+      BloodPressureChangeBean(
         sbp: json["sbp"] ?? -1,
         dbp: json["dbp"] ?? -1,
       );
@@ -1582,9 +1750,11 @@ class BloodPressureChangeBean {
       };
 }
 
-BloodPressureBean bloodPressureBeanFromJson(String str) => BloodPressureBean.fromJson(json.decode(str));
+BloodPressureBean bloodPressureBeanFromJson(String str) =>
+    BloodPressureBean.fromJson(json.decode(str));
 
-String bloodPressureBeanToJson(BloodPressureBean data) => json.encode(data.toJson());
+String bloodPressureBeanToJson(BloodPressureBean data) =>
+    json.encode(data.toJson());
 
 class BloodPressureBean {
   BloodPressureBean({
@@ -1601,11 +1771,15 @@ class BloodPressureBean {
   List<HistoryBloodPressureBean>? historyBpList;
   BloodPressureInfo? continueBp;
 
-  factory BloodPressureBean.fromJson(Map<String, dynamic> json) => BloodPressureBean(
+  factory BloodPressureBean.fromJson(Map<String, dynamic> json) =>
+      BloodPressureBean(
         type: json["type"],
         continueState: json["continueState"] ?? false,
-        pressureChange: BloodPressureChangeBean.fromJson(json["pressureChange"] ?? {}),
-        historyBpList: List<HistoryBloodPressureBean>.from((json["historyBpList"] ?? []).map((x) => HistoryBloodPressureBean.fromJson(x))),
+        pressureChange:
+            BloodPressureChangeBean.fromJson(json["pressureChange"] ?? {}),
+        historyBpList: List<HistoryBloodPressureBean>.from(
+            (json["historyBpList"] ?? [])
+                .map((x) => HistoryBloodPressureBean.fromJson(x))),
         continueBp: BloodPressureInfo.fromJson(json["continueBp"] ?? {}),
       );
 
@@ -1613,14 +1787,17 @@ class BloodPressureBean {
         "type": type,
         "continueState": continueState,
         "pressureChange": pressureChange!.toJson(),
-        "historyBpList": List<dynamic>.from(historyBpList!.map((x) => x.toJson())),
+        "historyBpList":
+            List<dynamic>.from(historyBpList!.map((x) => x.toJson())),
         "continueBp": continueBp!.toJson(),
       };
 }
 
-HistoryBloodPressureBean historyBloodPressureBeanFromJson(String str) => HistoryBloodPressureBean.fromJson(json.decode(str));
+HistoryBloodPressureBean historyBloodPressureBeanFromJson(String str) =>
+    HistoryBloodPressureBean.fromJson(json.decode(str));
 
-String historyBloodPressureBeanToJson(HistoryBloodPressureBean data) => json.encode(data.toJson());
+String historyBloodPressureBeanToJson(HistoryBloodPressureBean data) =>
+    json.encode(data.toJson());
 
 class HistoryBloodPressureBean {
   HistoryBloodPressureBean({
@@ -1633,7 +1810,8 @@ class HistoryBloodPressureBean {
   int? sbp;
   int? dbp;
 
-  factory HistoryBloodPressureBean.fromJson(Map<String, dynamic> json) => HistoryBloodPressureBean(
+  factory HistoryBloodPressureBean.fromJson(Map<String, dynamic> json) =>
+      HistoryBloodPressureBean(
         date: json["date"] ?? "",
         sbp: json["sbp"] ?? -1,
         dbp: json["dbp"] ?? -1,
@@ -1646,9 +1824,11 @@ class HistoryBloodPressureBean {
       };
 }
 
-BloodPressureInfo bloodPressureInfoFromJson(String str) => BloodPressureInfo.fromJson(json.decode(str));
+BloodPressureInfo bloodPressureInfoFromJson(String str) =>
+    BloodPressureInfo.fromJson(json.decode(str));
 
-String bloodPressureInfoToJson(BloodPressureInfo data) => json.encode(data.toJson());
+String bloodPressureInfoToJson(BloodPressureInfo data) =>
+    json.encode(data.toJson());
 
 class BloodPressureInfo {
   BloodPressureInfo({
@@ -1659,7 +1839,8 @@ class BloodPressureInfo {
   int? startTime;
   int? timeInterval;
 
-  factory BloodPressureInfo.fromJson(Map<String, dynamic> json) => BloodPressureInfo(
+  factory BloodPressureInfo.fromJson(Map<String, dynamic> json) =>
+      BloodPressureInfo(
         startTime: json["startTime"],
         timeInterval: json["timeInterval"],
       );
@@ -1670,9 +1851,11 @@ class BloodPressureInfo {
       };
 }
 
-BloodOxygenBean bloodOxygenBeanFromJson(String str) => BloodOxygenBean.fromJson(json.decode(str));
+BloodOxygenBean bloodOxygenBeanFromJson(String str) =>
+    BloodOxygenBean.fromJson(json.decode(str));
 
-String bloodOxygenBeanToJson(BloodOxygenBean data) => json.encode(data.toJson());
+String bloodOxygenBeanToJson(BloodOxygenBean data) =>
+    json.encode(data.toJson());
 
 class BloodOxygenBean {
   BloodOxygenBean({
@@ -1691,12 +1874,15 @@ class BloodOxygenBean {
   List<HistoryBloodOxygenBean>? historyList;
   BloodOxygenInfo? continueBo;
 
-  factory BloodOxygenBean.fromJson(Map<String, dynamic> json) => BloodOxygenBean(
+  factory BloodOxygenBean.fromJson(Map<String, dynamic> json) =>
+      BloodOxygenBean(
         type: json["type"] ?? -1,
         continueState: json["continueState"] ?? false,
         timingMeasure: json["timingMeasure"] ?? -1,
         bloodOxygen: json["bloodOxygen"] ?? -1,
-        historyList: List<HistoryBloodOxygenBean>.from((json["historyList"] ?? []).map((x) => HistoryBloodOxygenBean.fromJson(x))),
+        historyList: List<HistoryBloodOxygenBean>.from(
+            (json["historyList"] ?? [])
+                .map((x) => HistoryBloodOxygenBean.fromJson(x))),
         continueBo: BloodOxygenInfo.fromJson(json["continueBO"] ?? {}),
       );
 
@@ -1710,9 +1896,11 @@ class BloodOxygenBean {
       };
 }
 
-HistoryBloodOxygenBean historyBloodOxygenBeanFromJson(String str) => HistoryBloodOxygenBean.fromJson(json.decode(str));
+HistoryBloodOxygenBean historyBloodOxygenBeanFromJson(String str) =>
+    HistoryBloodOxygenBean.fromJson(json.decode(str));
 
-String historyBloodOxygenBeanToJson(HistoryBloodOxygenBean data) => json.encode(data.toJson());
+String historyBloodOxygenBeanToJson(HistoryBloodOxygenBean data) =>
+    json.encode(data.toJson());
 
 class HistoryBloodOxygenBean {
   HistoryBloodOxygenBean({
@@ -1723,7 +1911,8 @@ class HistoryBloodOxygenBean {
   String? date;
   int? bo;
 
-  factory HistoryBloodOxygenBean.fromJson(Map<String, dynamic> json) => HistoryBloodOxygenBean(
+  factory HistoryBloodOxygenBean.fromJson(Map<String, dynamic> json) =>
+      HistoryBloodOxygenBean(
         date: json["date"] ?? "",
         bo: json["bo"] ?? -1,
       );
@@ -1734,9 +1923,11 @@ class HistoryBloodOxygenBean {
       };
 }
 
-BloodOxygenInfo bloodOxygenInfoFromJson(String str) => BloodOxygenInfo.fromJson(json.decode(str));
+BloodOxygenInfo bloodOxygenInfoFromJson(String str) =>
+    BloodOxygenInfo.fromJson(json.decode(str));
 
-String bloodOxygenInfoToJson(BloodOxygenInfo data) => json.encode(data.toJson());
+String bloodOxygenInfoToJson(BloodOxygenInfo data) =>
+    json.encode(data.toJson());
 
 class BloodOxygenInfo {
   BloodOxygenInfo({
@@ -1747,7 +1938,8 @@ class BloodOxygenInfo {
   int? startTime;
   int? timeInterval;
 
-  factory BloodOxygenInfo.fromJson(Map<String, dynamic> json) => BloodOxygenInfo(
+  factory BloodOxygenInfo.fromJson(Map<String, dynamic> json) =>
+      BloodOxygenInfo(
         startTime: json["startTime"],
         timeInterval: json["timeInterval"],
       );
@@ -1786,7 +1978,8 @@ class EcgBean {
       };
 }
 
-MessageBean messageBeanFromJson(String str) => MessageBean.fromJson(json.decode(str));
+MessageBean messageBeanFromJson(String str) =>
+    MessageBean.fromJson(json.decode(str));
 
 String messageBeanToJson(MessageBean data) => json.encode(data.toJson());
 
@@ -1826,9 +2019,11 @@ class MessageBean {
       };
 }
 
-SedentaryReminderPeriodBean sedentaryReminderPeriodBeanFromJson(String str) => SedentaryReminderPeriodBean.fromJson(json.decode(str));
+SedentaryReminderPeriodBean sedentaryReminderPeriodBeanFromJson(String str) =>
+    SedentaryReminderPeriodBean.fromJson(json.decode(str));
 
-String sedentaryReminderPeriodBeanToJson(SedentaryReminderPeriodBean data) => json.encode(data.toJson());
+String sedentaryReminderPeriodBeanToJson(SedentaryReminderPeriodBean data) =>
+    json.encode(data.toJson());
 
 class SedentaryReminderPeriodBean {
   SedentaryReminderPeriodBean({
@@ -1843,7 +2038,8 @@ class SedentaryReminderPeriodBean {
   int startHour;
   int steps;
 
-  factory SedentaryReminderPeriodBean.fromJson(Map<String, dynamic> json) => SedentaryReminderPeriodBean(
+  factory SedentaryReminderPeriodBean.fromJson(Map<String, dynamic> json) =>
+      SedentaryReminderPeriodBean(
         endHour: json["endHour"],
         period: json["period"],
         startHour: json["startHour"],
@@ -1858,9 +2054,11 @@ class SedentaryReminderPeriodBean {
       };
 }
 
-MenstrualCycleBean menstrualCycleBeanFromJson(String str) => MenstrualCycleBean.fromJson(json.decode(str));
+MenstrualCycleBean menstrualCycleBeanFromJson(String str) =>
+    MenstrualCycleBean.fromJson(json.decode(str));
 
-String menstrualCycleBeanToJson(MenstrualCycleBean data) => json.encode(data.toJson());
+String menstrualCycleBeanToJson(MenstrualCycleBean data) =>
+    json.encode(data.toJson());
 
 class MenstrualCycleBean {
   MenstrualCycleBean({
@@ -1885,7 +2083,8 @@ class MenstrualCycleBean {
   int reminderHour;
   int reminderMinute;
 
-  factory MenstrualCycleBean.fromJson(Map<String, dynamic> json) => MenstrualCycleBean(
+  factory MenstrualCycleBean.fromJson(Map<String, dynamic> json) =>
+      MenstrualCycleBean(
         physiologcalPeriod: json["physiologcalPeriod"],
         menstrualPeriod: json["menstrualPeriod"],
         startDate: json["startDate"],
@@ -1910,9 +2109,11 @@ class MenstrualCycleBean {
       };
 }
 
-DrinkWaterPeriodBean drinkWaterPeriodBeanFromJson(String str) => DrinkWaterPeriodBean.fromJson(json.decode(str));
+DrinkWaterPeriodBean drinkWaterPeriodBeanFromJson(String str) =>
+    DrinkWaterPeriodBean.fromJson(json.decode(str));
 
-String drinkWaterPeriodBeanToJson(DrinkWaterPeriodBean data) => json.encode(data.toJson());
+String drinkWaterPeriodBeanToJson(DrinkWaterPeriodBean data) =>
+    json.encode(data.toJson());
 
 class DrinkWaterPeriodBean {
   DrinkWaterPeriodBean({
@@ -1931,7 +2132,8 @@ class DrinkWaterPeriodBean {
   int period;
   int currentCups;
 
-  factory DrinkWaterPeriodBean.fromJson(Map<String, dynamic> json) => DrinkWaterPeriodBean(
+  factory DrinkWaterPeriodBean.fromJson(Map<String, dynamic> json) =>
+      DrinkWaterPeriodBean(
         enable: json["enable"],
         startHour: json["startHour"],
         startMinute: json["startMinute"],
@@ -1950,9 +2152,11 @@ class DrinkWaterPeriodBean {
       };
 }
 
-HandWashingPeriodBean handWashingPeriodBeanFromJson(String str) => HandWashingPeriodBean.fromJson(json.decode(str));
+HandWashingPeriodBean handWashingPeriodBeanFromJson(String str) =>
+    HandWashingPeriodBean.fromJson(json.decode(str));
 
-String handWashingPeriodBeanToJson(HandWashingPeriodBean data) => json.encode(data.toJson());
+String handWashingPeriodBeanToJson(HandWashingPeriodBean data) =>
+    json.encode(data.toJson());
 
 class HandWashingPeriodBean {
   HandWashingPeriodBean({
@@ -1969,7 +2173,8 @@ class HandWashingPeriodBean {
   int count;
   int period;
 
-  factory HandWashingPeriodBean.fromJson(Map<String, dynamic> json) => HandWashingPeriodBean(
+  factory HandWashingPeriodBean.fromJson(Map<String, dynamic> json) =>
+      HandWashingPeriodBean(
         enable: json["enable"],
         startHour: json["startHour"],
         startMinute: json["startMinute"],
@@ -1986,9 +2191,11 @@ class HandWashingPeriodBean {
       };
 }
 
-PillReminderBean pillReminderBeanFromJson(String str) => PillReminderBean.fromJson(json.decode(str));
+PillReminderBean pillReminderBeanFromJson(String str) =>
+    PillReminderBean.fromJson(json.decode(str));
 
-String pillReminderBeanToJson(PillReminderBean data) => json.encode(data.toJson());
+String pillReminderBeanToJson(PillReminderBean data) =>
+    json.encode(data.toJson());
 
 class PillReminderBean {
   PillReminderBean({
@@ -2005,12 +2212,14 @@ class PillReminderBean {
   int repeat;
   List<dynamic> reminderTimeList;
 
-  factory PillReminderBean.fromJson(Map<String, dynamic> json) => PillReminderBean(
+  factory PillReminderBean.fromJson(Map<String, dynamic> json) =>
+      PillReminderBean(
         id: json["id"],
         dateOffset: json["dateOffset"],
         name: json["name"],
         repeat: json["repeat"],
-        reminderTimeList: List<dynamic>.from(json["reminderTimeList"].map((x) => x)),
+        reminderTimeList:
+            List<dynamic>.from(json["reminderTimeList"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
@@ -2022,7 +2231,8 @@ class PillReminderBean {
       };
 }
 
-ContactBean contactBeanFromJson(String str) => ContactBean.fromJson(json.decode(str));
+ContactBean contactBeanFromJson(String str) =>
+    ContactBean.fromJson(json.decode(str));
 
 String contactBeanToJson(ContactBean data) => json.encode(data.toJson());
 
@@ -2086,13 +2296,17 @@ class TrainBean {
   int type;
 
   factory TrainBean.fromJson(Map<String, dynamic> json) => TrainBean(
-        historyTrainList: List<HistoryTrainList>.from((json["historyTrainList"] ?? []).map((x) => HistoryTrainList.fromJson(x))),
-        trainingList: List<TrainingInfo>.from((json["trainingList"] ?? []).map((x) => TrainingInfo.fromJson(x))),
+        historyTrainList: List<HistoryTrainList>.from(
+            (json["historyTrainList"] ?? [])
+                .map((x) => HistoryTrainList.fromJson(x))),
+        trainingList: List<TrainingInfo>.from(
+            (json["trainingList"] ?? []).map((x) => TrainingInfo.fromJson(x))),
         type: json["type"],
       );
 
   Map<String, dynamic> toJson() => {
-        "historyTrainList": List<HistoryTrainList>.from(historyTrainList!.map((x) => x)),
+        "historyTrainList":
+            List<HistoryTrainList>.from(historyTrainList!.map((x) => x)),
         "trainingList": List<TrainingInfo>.from(trainingList!.map((x) => x)),
         "type": type,
       };
@@ -2109,7 +2323,8 @@ class HistoryTrainList {
   int? type;
   int? id;
 
-  factory HistoryTrainList.fromJson(Map<String, dynamic> json) => HistoryTrainList(
+  factory HistoryTrainList.fromJson(Map<String, dynamic> json) =>
+      HistoryTrainList(
         startTime: json["startTime"] ?? -1,
         type: json["type"] ?? -1,
         id: json["id"] ?? -1,
@@ -2166,9 +2381,11 @@ class TrainingInfo {
       };
 }
 
-DeviceLanguageBean deviceLanguageBeanFromJson(String str) => DeviceLanguageBean.fromJson(json.decode(str));
+DeviceLanguageBean deviceLanguageBeanFromJson(String str) =>
+    DeviceLanguageBean.fromJson(json.decode(str));
 
-String deviceLanguageBeanToJson(DeviceLanguageBean data) => json.encode(data.toJson());
+String deviceLanguageBeanToJson(DeviceLanguageBean data) =>
+    json.encode(data.toJson());
 
 class DeviceLanguageBean {
   DeviceLanguageBean({
@@ -2179,7 +2396,8 @@ class DeviceLanguageBean {
   List<int> languageType;
   int type;
 
-  factory DeviceLanguageBean.fromJson(Map<String, dynamic> json) => DeviceLanguageBean(
+  factory DeviceLanguageBean.fromJson(Map<String, dynamic> json) =>
+      DeviceLanguageBean(
         languageType: List<int>.from(json["languageType"].map((x) => x)),
         type: json["type"],
       );
@@ -2190,9 +2408,11 @@ class DeviceLanguageBean {
       };
 }
 
-PeriodTimeResultBean periodTimeResultBeanFromJson(String str) => PeriodTimeResultBean.fromJson(json.decode(str));
+PeriodTimeResultBean periodTimeResultBeanFromJson(String str) =>
+    PeriodTimeResultBean.fromJson(json.decode(str));
 
-String periodTimeResultBeanToJson(PeriodTimeResultBean data) => json.encode(data.toJson());
+String periodTimeResultBeanToJson(PeriodTimeResultBean data) =>
+    json.encode(data.toJson());
 
 class PeriodTimeResultBean {
   PeriodTimeResultBean({
@@ -2203,7 +2423,8 @@ class PeriodTimeResultBean {
   int periodTimeType;
   PeriodTimeBean periodTimeInfo;
 
-  factory PeriodTimeResultBean.fromJson(Map<String, dynamic> json) => PeriodTimeResultBean(
+  factory PeriodTimeResultBean.fromJson(Map<String, dynamic> json) =>
+      PeriodTimeResultBean(
         periodTimeType: json["periodTimeType"],
         periodTimeInfo: PeriodTimeBean.fromJson(json["periodTimeInfo"]),
       );
@@ -2214,7 +2435,8 @@ class PeriodTimeResultBean {
       };
 }
 
-BrightnessBean brightnessBeanFromJson(String str) => BrightnessBean.fromJson(json.decode(str));
+BrightnessBean brightnessBeanFromJson(String str) =>
+    BrightnessBean.fromJson(json.decode(str));
 
 String brightnessBeanToJson(BrightnessBean data) => json.encode(data.toJson());
 
@@ -2238,9 +2460,11 @@ class BrightnessBean {
       };
 }
 
-MaxHeartRateBean maxHeartRateBeanFromJson(String str) => MaxHeartRateBean.fromJson(json.decode(str));
+MaxHeartRateBean maxHeartRateBeanFromJson(String str) =>
+    MaxHeartRateBean.fromJson(json.decode(str));
 
-String maxHeartRateBeanToJson(MaxHeartRateBean data) => json.encode(data.toJson());
+String maxHeartRateBeanToJson(MaxHeartRateBean data) =>
+    json.encode(data.toJson());
 
 class MaxHeartRateBean {
   MaxHeartRateBean({
@@ -2251,7 +2475,8 @@ class MaxHeartRateBean {
   int heartRate;
   bool enable;
 
-  factory MaxHeartRateBean.fromJson(Map<String, dynamic> json) => MaxHeartRateBean(
+  factory MaxHeartRateBean.fromJson(Map<String, dynamic> json) =>
+      MaxHeartRateBean(
         heartRate: json["heartRate"],
         enable: json["enable"],
       );
@@ -2262,9 +2487,11 @@ class MaxHeartRateBean {
       };
 }
 
-WatchFaceIdBean watchFaceIdBeanFromJson(String str) => WatchFaceIdBean.fromJson(json.decode(str));
+WatchFaceIdBean watchFaceIdBeanFromJson(String str) =>
+    WatchFaceIdBean.fromJson(json.decode(str));
 
-String watchFaceIdBeanToJson(WatchFaceIdBean data) => json.encode(data.toJson());
+String watchFaceIdBeanToJson(WatchFaceIdBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceIdBean {
   WatchFaceIdBean({
@@ -2277,7 +2504,8 @@ class WatchFaceIdBean {
   String? error;
   int code;
 
-  factory WatchFaceIdBean.fromJson(Map<String, dynamic> json) => WatchFaceIdBean(
+  factory WatchFaceIdBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceIdBean(
         watchFace: WatchFace.fromJson(json["watchFace"]),
         error: json["error"],
         code: json["code"],
@@ -2314,9 +2542,11 @@ class WatchFace {
       };
 }
 
-WatchFaceStoreResultBean watchFaceStoreListResultBeanFromJson(String str) => WatchFaceStoreResultBean.fromJson(json.decode(str));
+WatchFaceStoreResultBean watchFaceStoreListResultBeanFromJson(String str) =>
+    WatchFaceStoreResultBean.fromJson(json.decode(str));
 
-String watchFaceStoreListResultBeanToJson(WatchFaceStoreResultBean data) => json.encode(data.toJson());
+String watchFaceStoreListResultBeanToJson(WatchFaceStoreResultBean data) =>
+    json.encode(data.toJson());
 
 class WatchFaceStoreResultBean {
   WatchFaceStoreResultBean({
@@ -2327,8 +2557,10 @@ class WatchFaceStoreResultBean {
   WatchFaceStore? watchFaceStoreInfo;
   String? error;
 
-  factory WatchFaceStoreResultBean.fromJson(Map<String, dynamic> json) => WatchFaceStoreResultBean(
-        watchFaceStoreInfo: WatchFaceStore.fromJson(json["watchFaceStoreInfo"] ?? {}),
+  factory WatchFaceStoreResultBean.fromJson(Map<String, dynamic> json) =>
+      WatchFaceStoreResultBean(
+        watchFaceStoreInfo:
+            WatchFaceStore.fromJson(json["watchFaceStoreInfo"] ?? {}),
         error: json["error"],
       );
 
@@ -2355,7 +2587,8 @@ class WatchFaceStore {
         total: json["total"] ?? -1,
         prePage: json["prePage"] ?? -1,
         pageIndex: json["pageIndex"] ?? -1,
-        list: List<WatchFaceBean>.from((json["list"] ?? []).map((x) => WatchFaceBean.fromJson(x))),
+        list: List<WatchFaceBean>.from(
+            (json["list"] ?? []).map((x) => WatchFaceBean.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -2390,37 +2623,104 @@ class ListClass {
       };
 }
 
-FileTransBean fileTransBeanFromJson(String str) => FileTransBean.fromJson(json.decode(str));
+FileTransBean fileTransBeanFromJson(String str) =>
+    FileTransBean.fromJson(json.decode(str));
 
 String wfFileTransBeanToJson(FileTransBean data) => json.encode(data.toJson());
 
+/// Represents the event bean for file transfer operations,
+/// specifically for watch face transfer events from the `wfFileTransEveStm` stream.
 class FileTransBean {
+  /// The mapped event type for easier handling in Dart.
+  /// Ini adalah hasil konversi dari `rawType` menggunakan `mapIntToWatchFaceTransferEventType`.
+  final WatchFaceTransferEventType eventType;
+
+  /// The original integer 'type' value received from the native code (Android/iOS).
+  /// Nilai ini (1, 2, 3, 4, atau 5 yang baru) datang langsung dari field 'type' di JSON.
+  final int rawType;
+
+  /// The progress of the transfer (typically 0-100).
+  /// Null if not applicable to the event type.
+  final int? progress;
+
+  /// The error code if an error occurred during the transfer.
+  /// Null if no error or not applicable to the event type.
+  final int? error;
+
+  /// The installation state of the watch face on the device (true for success, false for failure).
+  /// This field is primarily relevant when `eventType` is `WatchFaceTransferEventType.installStateChanged`.
+  /// Null if not applicable to the event type or if not provided by native.
+  final bool? state;
+
   FileTransBean({
-    required this.type,
-    required this.progress,
-    required this.error,
+    required this.eventType, // Menggunakan enum untuk tipe yang lebih aman di Dart
+    required this.rawType, // Menyimpan nilai int asli dari native
+    this.progress,
+    this.error,
+    this.state, // Menambahkan field 'state' baru
   });
 
-  int type;
-  int? progress;
-  int? error;
-
-  factory FileTransBean.fromJson(Map<String, dynamic> json) => FileTransBean(
-        progress: json["progress"] ?? -1,
-        error: json["error"] ?? -1,
-        type: json["type"],
+  /// Creates a FileTransBean instance from a JSON map (Map<String, dynamic>)
+  /// received from the native code (Android/iOS).
+  factory FileTransBean.fromJson(Map<String, dynamic> json) {
+    // Memberikan penanganan jika json yang diterima adalah null atau kosong,
+    // meskipun idealnya native code selalu mengirim map yang valid.
+    if (json == null || json.isEmpty) {
+      print(
+          'MoyoungSDK: FileTransBean.fromJson received null or empty json map.');
+      return FileTransBean(
+        eventType: WatchFaceTransferEventType.unknown, // Default ke unknown
+        rawType:
+            TransType.unknown, // Menggunakan konstanta dari kelas TransType
+        progress: null, // atau -1 jika itu preferensi Anda
+        error: null, // atau -1 jika itu preferensi Anda
+        state: null,
       );
+    }
 
+    // Mengambil nilai 'type' sebagai integer dari JSON.
+    // Memberikan nilai default TransType.unknown jika 'type' tidak ada atau null dari native.
+    // Kode Anda sebelumnya menggunakan `json["type"]` tanpa casting eksplisit ke int?,
+    // jadi saya akan mengikuti pola itu tapi menambahkan null check yang lebih aman.
+    int receivedRawType = json["type"] as int? ?? TransType.unknown;
+
+    return FileTransBean(
+      // Mengkonversi nilai integer 'type' ke enum WatchFaceTransferEventType
+      eventType: mapIntToWatchFaceTransferEventType(receivedRawType),
+      rawType: receivedRawType, // Menyimpan nilai integer asli dari 'type'
+      progress:
+          json["progress"] as int?, // Menggunakan null jika tidak ada, bukan -1
+      error: json["error"] as int?, // Menggunakan null jika tidak ada, bukan -1
+      state: json["state"]
+          as bool?, // Mem-parse field 'state' yang baru (akan null jika tidak ada di JSON)
+    );
+  }
+
+  /// Optional: Converts this FileTransBean instance to a JSON map.
+  /// Primarily useful for debugging or logging on the Flutter side.
+  /// Note: This specific bean is typically received from native, not sent to native.
   Map<String, dynamic> toJson() => {
-        "type": type,
+        // Saat serialisasi ke JSON, kita mengirim nilai int asli dari 'rawType'
+        // karena itu yang mungkin diharapkan oleh sistem lain jika bean ini dikirim.
+        "type": rawType,
         "progress": progress,
         "error": error,
-      };
+        "state": state,
+      }..removeWhere(
+          (key, value) => value == null); // Menghapus field yang null dari map
+  // agar JSON lebih bersih jika dikirim.
+
+  @override
+  String toString() {
+    return 'FileTransBean(eventType: $eventType, rawType: $rawType, progress: $progress, error: $error, state: $state)';
+  }
 }
 
-ContactListenBean contactListenBeanFromJson(String str) => ContactListenBean.fromJson(json.decode(str));
+ContactListenBean contactListenBeanFromJson(String str) =>
+    ContactListenBean.fromJson(json.decode(str));
 
-String contactListenBeanToJson(ContactListenBean data) => json.encode(data.toJson());
+String contactListenBeanToJson(ContactListenBean data) =>
+    json.encode(data.toJson());
 
 class ContactListenBean {
   ContactListenBean({
@@ -2433,7 +2733,8 @@ class ContactListenBean {
   int? savedSuccess;
   int? savedFail;
 
-  factory ContactListenBean.fromJson(Map<String, dynamic> json) => ContactListenBean(
+  factory ContactListenBean.fromJson(Map<String, dynamic> json) =>
+      ContactListenBean(
         type: json["type"],
         savedSuccess: json["savedSuccess"] ?? -1,
         savedFail: json["savedFail"] ?? -1,
@@ -2446,9 +2747,11 @@ class ContactListenBean {
       };
 }
 
-DeviceBatteryBean deviceBatteryBeanFromJson(String str) => DeviceBatteryBean.fromJson(json.decode(str));
+DeviceBatteryBean deviceBatteryBeanFromJson(String str) =>
+    DeviceBatteryBean.fromJson(json.decode(str));
 
-String deviceBatteryBeanToJson(DeviceBatteryBean data) => json.encode(data.toJson());
+String deviceBatteryBeanToJson(DeviceBatteryBean data) =>
+    json.encode(data.toJson());
 
 class DeviceBatteryBean {
   DeviceBatteryBean({
@@ -2461,7 +2764,8 @@ class DeviceBatteryBean {
   bool? subscribe;
   int? deviceBattery;
 
-  factory DeviceBatteryBean.fromJson(Map<String, dynamic> json) => DeviceBatteryBean(
+  factory DeviceBatteryBean.fromJson(Map<String, dynamic> json) =>
+      DeviceBatteryBean(
         type: json["type"],
         subscribe: json["subscribe"] ?? false,
         deviceBattery: json["deviceBattery"] ?? -1,
@@ -2474,9 +2778,11 @@ class DeviceBatteryBean {
       };
 }
 
-UpgradeErrorBean upgradeErrorBeanFromJson(String str) => UpgradeErrorBean.fromJson(json.decode(str));
+UpgradeErrorBean upgradeErrorBeanFromJson(String str) =>
+    UpgradeErrorBean.fromJson(json.decode(str));
 
-String upgradeErrorBeanToJson(UpgradeErrorBean data) => json.encode(data.toJson());
+String upgradeErrorBeanToJson(UpgradeErrorBean data) =>
+    json.encode(data.toJson());
 
 class UpgradeErrorBean {
   UpgradeErrorBean({
@@ -2487,7 +2793,8 @@ class UpgradeErrorBean {
   int? error;
   String? errorContent;
 
-  factory UpgradeErrorBean.fromJson(Map<String, dynamic> json) => UpgradeErrorBean(
+  factory UpgradeErrorBean.fromJson(Map<String, dynamic> json) =>
+      UpgradeErrorBean(
         error: json["error"],
         errorContent: json["errorContent"],
       );
@@ -2522,12 +2829,19 @@ class OTABean {
         upgradeProgress: json["upgradeProgress"] ?? -1,
       );
 
-  Map<String, dynamic> toJson() => {"type": type, "start": start, "upgradeError": upgradeError!.toJson(), "upgradeProgress": upgradeProgress};
+  Map<String, dynamic> toJson() => {
+        "type": type,
+        "start": start,
+        "upgradeError": upgradeError!.toJson(),
+        "upgradeProgress": upgradeProgress
+      };
 }
 
-ContactConfigBean contactConfigBeanFromJson(String str) => ContactConfigBean.fromJson(json.decode(str));
+ContactConfigBean contactConfigBeanFromJson(String str) =>
+    ContactConfigBean.fromJson(json.decode(str));
 
-String contactConfigBeanToJson(ContactConfigBean data) => json.encode(data.toJson());
+String contactConfigBeanToJson(ContactConfigBean data) =>
+    json.encode(data.toJson());
 
 class ContactConfigBean {
   ContactConfigBean({
@@ -2542,7 +2856,8 @@ class ContactConfigBean {
   int width;
   int height;
 
-  factory ContactConfigBean.fromJson(Map<String, dynamic> json) => ContactConfigBean(
+  factory ContactConfigBean.fromJson(Map<String, dynamic> json) =>
+      ContactConfigBean(
         supported: json["supported"],
         count: json["count"],
         width: json["width"],
@@ -2557,7 +2872,8 @@ class ContactConfigBean {
       };
 }
 
-TempChangeBean tempChangeBeanFromJson(String str) => TempChangeBean.fromJson(json.decode(str));
+TempChangeBean tempChangeBeanFromJson(String str) =>
+    TempChangeBean.fromJson(json.decode(str));
 
 String tempChangeBeanToJson(TempChangeBean data) => json.encode(data.toJson());
 
@@ -2607,7 +2923,8 @@ class TempInfo {
   factory TempInfo.fromJson(Map<String, dynamic> json) => TempInfo(
         tempTimeType: json["tempTimeType"] ?? "",
         startTime: json["startTime"] ?? -1,
-        tempList: List<double>.from((json["tempList"] ?? []).map((x) => x.toDouble())),
+        tempList: List<double>.from(
+            (json["tempList"] ?? []).map((x) => x.toDouble())),
       );
 
   Map<String, dynamic> toJson() => {
@@ -2617,9 +2934,11 @@ class TempInfo {
       };
 }
 
-PillReminderCallback pillReminderCallbackFromJson(String str) => PillReminderCallback.fromJson(json.decode(str));
+PillReminderCallback pillReminderCallbackFromJson(String str) =>
+    PillReminderCallback.fromJson(json.decode(str));
 
-String pillReminderCallbackToJson(PillReminderCallback data) => json.encode(data.toJson());
+String pillReminderCallbackToJson(PillReminderCallback data) =>
+    json.encode(data.toJson());
 
 class PillReminderCallback {
   PillReminderCallback({
@@ -2630,7 +2949,8 @@ class PillReminderCallback {
   int supportCount;
   List<PillReminderBean> list;
 
-  factory PillReminderCallback.fromJson(Map<String, dynamic> json) => PillReminderCallback(
+  factory PillReminderCallback.fromJson(Map<String, dynamic> json) =>
+      PillReminderCallback(
         supportCount: json["supportCount"],
         list: List<PillReminderBean>.from(json["list"].map((x) => x)),
       );
@@ -2665,9 +2985,11 @@ class OtaBean {
       };
 }
 
-SendWatchFaceBean sendWatchFaceBeanFromJson(String str) => SendWatchFaceBean.fromJson(json.decode(str));
+SendWatchFaceBean sendWatchFaceBeanFromJson(String str) =>
+    SendWatchFaceBean.fromJson(json.decode(str));
 
-String sendWatchFaceBeanToJson(SendWatchFaceBean data) => json.encode(data.toJson());
+String sendWatchFaceBeanToJson(SendWatchFaceBean data) =>
+    json.encode(data.toJson());
 
 class SendWatchFaceBean {
   SendWatchFaceBean({
@@ -2678,8 +3000,10 @@ class SendWatchFaceBean {
   CustomizeWatchFaceBean watchFaceFlutterBean;
   int timeout;
 
-  factory SendWatchFaceBean.fromJson(Map<String, dynamic> json) => SendWatchFaceBean(
-        watchFaceFlutterBean: CustomizeWatchFaceBean.fromJson(json["watchFaceFlutterBean"]),
+  factory SendWatchFaceBean.fromJson(Map<String, dynamic> json) =>
+      SendWatchFaceBean(
+        watchFaceFlutterBean:
+            CustomizeWatchFaceBean.fromJson(json["watchFaceFlutterBean"]),
         timeout: json["timeout"],
       );
 
@@ -2689,9 +3013,11 @@ class SendWatchFaceBean {
       };
 }
 
-WeatherChangeBean weatherChangeBeanFromJson(String str) => WeatherChangeBean.fromJson(json.decode(str));
+WeatherChangeBean weatherChangeBeanFromJson(String str) =>
+    WeatherChangeBean.fromJson(json.decode(str));
 
-String weatherChangeBeanToJson(WeatherChangeBean data) => json.encode(data.toJson());
+String weatherChangeBeanToJson(WeatherChangeBean data) =>
+    json.encode(data.toJson());
 
 class WeatherChangeBean {
   WeatherChangeBean({
@@ -2702,7 +3028,8 @@ class WeatherChangeBean {
   int type;
   int? tempUnit;
 
-  factory WeatherChangeBean.fromJson(Map<String, dynamic> json) => WeatherChangeBean(
+  factory WeatherChangeBean.fromJson(Map<String, dynamic> json) =>
+      WeatherChangeBean(
         type: json["type"],
         tempUnit: json["tempUnit"] ?? -1,
       );
@@ -2713,9 +3040,11 @@ class WeatherChangeBean {
       };
 }
 
-FirmwareVersion firmwareVersionFromJson(String str) => FirmwareVersion.fromJson(json.decode(str));
+FirmwareVersion firmwareVersionFromJson(String str) =>
+    FirmwareVersion.fromJson(json.decode(str));
 
-String firmwareVersionToJson(FirmwareVersion data) => json.encode(data.toJson());
+String firmwareVersionToJson(FirmwareVersion data) =>
+    json.encode(data.toJson());
 
 class FirmwareVersion {
   FirmwareVersion({
@@ -2726,7 +3055,8 @@ class FirmwareVersion {
   String version;
   int otaType;
 
-  factory FirmwareVersion.fromJson(Map<String, dynamic> json) => FirmwareVersion(
+  factory FirmwareVersion.fromJson(Map<String, dynamic> json) =>
+      FirmwareVersion(
         version: json["version"],
         otaType: json["OTAType"],
       );
@@ -2737,9 +3067,11 @@ class FirmwareVersion {
       };
 }
 
-DailyGoalsInfoBean dailyGoalsInfoBeanFromJson(String str) => DailyGoalsInfoBean.fromJson(json.decode(str));
+DailyGoalsInfoBean dailyGoalsInfoBeanFromJson(String str) =>
+    DailyGoalsInfoBean.fromJson(json.decode(str));
 
-String dailyGoalsInfoBeanToJson(DailyGoalsInfoBean data) => json.encode(data.toJson());
+String dailyGoalsInfoBeanToJson(DailyGoalsInfoBean data) =>
+    json.encode(data.toJson());
 
 class DailyGoalsInfoBean {
   DailyGoalsInfoBean({
@@ -2755,14 +3087,25 @@ class DailyGoalsInfoBean {
   int distance;
 
   factory DailyGoalsInfoBean.fromJson(Map<String, dynamic> json) =>
-      DailyGoalsInfoBean(steps: json["steps"], calories: json["calories"], trainingTime: json["trainingTime"], distance: json["distance"]);
+      DailyGoalsInfoBean(
+          steps: json["steps"],
+          calories: json["calories"],
+          trainingTime: json["trainingTime"],
+          distance: json["distance"]);
 
-  Map<String, dynamic> toJson() => {"steps": steps, "calories": calories, "trainingTime": trainingTime, "distance": distance};
+  Map<String, dynamic> toJson() => {
+        "steps": steps,
+        "calories": calories,
+        "trainingTime": trainingTime,
+        "distance": distance
+      };
 }
 
-TrainingDayInfoBean trainingDayInfoBeanFromJson(String str) => TrainingDayInfoBean.fromJson(json.decode(str));
+TrainingDayInfoBean trainingDayInfoBeanFromJson(String str) =>
+    TrainingDayInfoBean.fromJson(json.decode(str));
 
-String trainingDayInfoBeanToJson(TrainingDayInfoBean data) => json.encode(data.toJson());
+String trainingDayInfoBeanToJson(TrainingDayInfoBean data) =>
+    json.encode(data.toJson());
 
 class TrainingDayInfoBean {
   TrainingDayInfoBean({
@@ -2773,7 +3116,8 @@ class TrainingDayInfoBean {
   bool enable;
   List<int> trainingDays;
 
-  factory TrainingDayInfoBean.fromJson(Map<String, dynamic> json) => TrainingDayInfoBean(
+  factory TrainingDayInfoBean.fromJson(Map<String, dynamic> json) =>
+      TrainingDayInfoBean(
         enable: json["enable"],
         trainingDays: List<int>.from(json["trainingDays"].map((x) => x)),
       );
@@ -2784,9 +3128,11 @@ class TrainingDayInfoBean {
       };
 }
 
-ElectronicCardInfoBean electronicCardInfoBeanFromJson(String str) => ElectronicCardInfoBean.fromJson(json.decode(str));
+ElectronicCardInfoBean electronicCardInfoBeanFromJson(String str) =>
+    ElectronicCardInfoBean.fromJson(json.decode(str));
 
-String electronicCardInfoBeanToJson(ElectronicCardInfoBean data) => json.encode(data.toJson());
+String electronicCardInfoBeanToJson(ElectronicCardInfoBean data) =>
+    json.encode(data.toJson());
 
 class ElectronicCardInfoBean {
   ElectronicCardInfoBean({
@@ -2799,7 +3145,8 @@ class ElectronicCardInfoBean {
   String title;
   String url;
 
-  factory ElectronicCardInfoBean.fromJson(Map<String, dynamic> json) => ElectronicCardInfoBean(
+  factory ElectronicCardInfoBean.fromJson(Map<String, dynamic> json) =>
+      ElectronicCardInfoBean(
         id: json["id"],
         title: json["title"],
         url: json["url"],
@@ -2812,9 +3159,11 @@ class ElectronicCardInfoBean {
       };
 }
 
-CalendarEventInfoBean calendarEventInfoBeanFromJson(String str) => CalendarEventInfoBean.fromJson(json.decode(str));
+CalendarEventInfoBean calendarEventInfoBeanFromJson(String str) =>
+    CalendarEventInfoBean.fromJson(json.decode(str));
 
-String calendarEventInfoBeanToJson(CalendarEventInfoBean data) => json.encode(data.toJson());
+String calendarEventInfoBeanToJson(CalendarEventInfoBean data) =>
+    json.encode(data.toJson());
 
 class CalendarEventInfoBean {
   CalendarEventInfoBean({
@@ -2835,7 +3184,8 @@ class CalendarEventInfoBean {
   int endMinute;
   int time;
 
-  factory CalendarEventInfoBean.fromJson(Map<String, dynamic> json) => CalendarEventInfoBean(
+  factory CalendarEventInfoBean.fromJson(Map<String, dynamic> json) =>
+      CalendarEventInfoBean(
         id: json["id"],
         title: json["title"],
         startHour: json["startHour"],
@@ -2856,9 +3206,13 @@ class CalendarEventInfoBean {
       };
 }
 
-CalendarEventReminderTimeBean calendarEventReminderTimeBeanFromJson(String str) => CalendarEventReminderTimeBean.fromJson(json.decode(str));
+CalendarEventReminderTimeBean calendarEventReminderTimeBeanFromJson(
+        String str) =>
+    CalendarEventReminderTimeBean.fromJson(json.decode(str));
 
-String calendarEventReminderTimeBeanToJson(CalendarEventReminderTimeBean data) => json.encode(data.toJson());
+String calendarEventReminderTimeBeanToJson(
+        CalendarEventReminderTimeBean data) =>
+    json.encode(data.toJson());
 
 class CalendarEventReminderTimeBean {
   CalendarEventReminderTimeBean({
@@ -2869,7 +3223,8 @@ class CalendarEventReminderTimeBean {
   bool enable;
   int minutes;
 
-  factory CalendarEventReminderTimeBean.fromJson(Map<String, dynamic> json) => CalendarEventReminderTimeBean(
+  factory CalendarEventReminderTimeBean.fromJson(Map<String, dynamic> json) =>
+      CalendarEventReminderTimeBean(
         enable: json["enable"],
         minutes: json["minutes"],
       );
@@ -2880,9 +3235,11 @@ class CalendarEventReminderTimeBean {
       };
 }
 
-ElectronicCardCountInfoBean electronicCardCountInfoBeanFromJson(String str) => ElectronicCardCountInfoBean.fromJson(json.decode(str));
+ElectronicCardCountInfoBean electronicCardCountInfoBeanFromJson(String str) =>
+    ElectronicCardCountInfoBean.fromJson(json.decode(str));
 
-String electronicCardCountInfoBeanToJson(ElectronicCardCountInfoBean data) => json.encode(data.toJson());
+String electronicCardCountInfoBeanToJson(ElectronicCardCountInfoBean data) =>
+    json.encode(data.toJson());
 
 class ElectronicCardCountInfoBean {
   ElectronicCardCountInfoBean({
@@ -2895,7 +3252,8 @@ class ElectronicCardCountInfoBean {
   int urlBytesLimit;
   List<int> savedIdList;
 
-  factory ElectronicCardCountInfoBean.fromJson(Map<String, dynamic> json) => ElectronicCardCountInfoBean(
+  factory ElectronicCardCountInfoBean.fromJson(Map<String, dynamic> json) =>
+      ElectronicCardCountInfoBean(
         count: json["count"],
         urlBytesLimit: json["urlBytesLimit"],
         savedIdList: List<int>.from(json["savedIdList"].map((x) => x)),
@@ -2908,9 +3266,11 @@ class ElectronicCardCountInfoBean {
       };
 }
 
-CalendarEventBean calendarEventBeanFromJson(String str) => CalendarEventBean.fromJson(json.decode(str));
+CalendarEventBean calendarEventBeanFromJson(String str) =>
+    CalendarEventBean.fromJson(json.decode(str));
 
-String calendarEventBeanToJson(CalendarEventBean data) => json.encode(data.toJson());
+String calendarEventBeanToJson(CalendarEventBean data) =>
+    json.encode(data.toJson());
 
 class CalendarEventBean {
   CalendarEventBean({
@@ -2929,13 +3289,16 @@ class CalendarEventBean {
   int time;
   CalendarEventInfoBean calendarEventInfo;
 
-  factory CalendarEventBean.fromJson(Map<String, dynamic> json) => CalendarEventBean(
+  factory CalendarEventBean.fromJson(Map<String, dynamic> json) =>
+      CalendarEventBean(
         type: json["type"],
         maxNumber: json["maxNumber"] ?? -1,
-        list: List<SavedCalendarEventInfoBean>.from((json["list"] ?? []).map((x) => (SavedCalendarEventInfoBean.fromJson(x)))),
+        list: List<SavedCalendarEventInfoBean>.from((json["list"] ?? [])
+            .map((x) => (SavedCalendarEventInfoBean.fromJson(x)))),
         state: json["statet"] ?? false,
         time: json["time"] ?? -1,
-        calendarEventInfo: CalendarEventInfoBean.fromJson(json["calendarEventInfo"] ?? {}),
+        calendarEventInfo:
+            CalendarEventInfoBean.fromJson(json["calendarEventInfo"] ?? {}),
       );
 
   Map<String, dynamic> toJson() => {
@@ -2957,7 +3320,8 @@ class SavedCalendarEventInfoBean {
   int id;
   List<int> time;
 
-  factory SavedCalendarEventInfoBean.fromJson(Map<String, dynamic> json) => SavedCalendarEventInfoBean(
+  factory SavedCalendarEventInfoBean.fromJson(Map<String, dynamic> json) =>
+      SavedCalendarEventInfoBean(
         id: json["id"],
         time: List<int>.from(json["time"].map((x) => x)),
       );
@@ -2968,7 +3332,8 @@ class SavedCalendarEventInfoBean {
       };
 }
 
-FindPhoneBean findPhoneBeanFromJson(String str) => FindPhoneBean.fromJson(json.decode(str));
+FindPhoneBean findPhoneBeanFromJson(String str) =>
+    FindPhoneBean.fromJson(json.decode(str));
 
 String findPhoneBeanToJson(FindPhoneBean data) => json.encode(data.toJson());
 
@@ -2988,7 +3353,8 @@ class FindPhoneBean {
       };
 }
 
-HrvHandlerBean hrvHandlerBeanFromJson(String str) => HrvHandlerBean.fromJson(json.decode(str));
+HrvHandlerBean hrvHandlerBeanFromJson(String str) =>
+    HrvHandlerBean.fromJson(json.decode(str));
 
 String hrvHandlerBeanToJson(HrvHandlerBean data) => json.encode(data.toJson());
 
@@ -3009,7 +3375,8 @@ class HrvHandlerBean {
         type: json["type"],
         isSupport: json["isSupport"] ?? false,
         value: json["value"] ?? -1,
-        list: List<HistoryHrvInfoBean>.from((json["list"] ?? []).map((x) => (HistoryHrvInfoBean.fromJson(x)))),
+        list: List<HistoryHrvInfoBean>.from(
+            (json["list"] ?? []).map((x) => (HistoryHrvInfoBean.fromJson(x)))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -3029,7 +3396,8 @@ class HistoryHrvInfoBean {
   String date;
   int hrv;
 
-  factory HistoryHrvInfoBean.fromJson(Map<String, dynamic> json) => HistoryHrvInfoBean(
+  factory HistoryHrvInfoBean.fromJson(Map<String, dynamic> json) =>
+      HistoryHrvInfoBean(
         date: json["date"],
         hrv: json["hrv"],
       );
@@ -3040,9 +3408,11 @@ class HistoryHrvInfoBean {
       };
 }
 
-StressHandlerBean stressHandlerBeanFromJson(String str) => StressHandlerBean.fromJson(json.decode(str));
+StressHandlerBean stressHandlerBeanFromJson(String str) =>
+    StressHandlerBean.fromJson(json.decode(str));
 
-String stressHandlerBeanToJson(StressHandlerBean data) => json.encode(data.toJson());
+String stressHandlerBeanToJson(StressHandlerBean data) =>
+    json.encode(data.toJson());
 
 class StressHandlerBean {
   StressHandlerBean({
@@ -3061,13 +3431,16 @@ class StressHandlerBean {
   bool state;
   TimingStressInfoBean timingStressInfo;
 
-  factory StressHandlerBean.fromJson(Map<String, dynamic> json) => StressHandlerBean(
+  factory StressHandlerBean.fromJson(Map<String, dynamic> json) =>
+      StressHandlerBean(
         type: json["type"],
         isSupport: json["isSupport"] ?? false,
         value: json["value"] ?? -1,
-        list: List<HistoryStressInfoBean>.from((json["list"] ?? []).map((x) => (HistoryStressInfoBean.fromJson(x)))),
+        list: List<HistoryStressInfoBean>.from((json["list"] ?? [])
+            .map((x) => (HistoryStressInfoBean.fromJson(x)))),
         state: json["state"] ?? false,
-        timingStressInfo: TimingStressInfoBean.fromJson(json["timingStressInfo"] ?? {}),
+        timingStressInfo:
+            TimingStressInfoBean.fromJson(json["timingStressInfo"] ?? {}),
       );
 
   Map<String, dynamic> toJson() => {
@@ -3080,9 +3453,11 @@ class StressHandlerBean {
       };
 }
 
-HistoryStressInfoBean historyStressInfoBeanFromJson(String str) => HistoryStressInfoBean.fromJson(json.decode(str));
+HistoryStressInfoBean historyStressInfoBeanFromJson(String str) =>
+    HistoryStressInfoBean.fromJson(json.decode(str));
 
-String historyStressInfoBeanToJson(HistoryStressInfoBean data) => json.encode(data.toJson());
+String historyStressInfoBeanToJson(HistoryStressInfoBean data) =>
+    json.encode(data.toJson());
 
 class HistoryStressInfoBean {
   HistoryStressInfoBean({
@@ -3093,7 +3468,8 @@ class HistoryStressInfoBean {
   int? date;
   int? stress;
 
-  factory HistoryStressInfoBean.fromJson(Map<String, dynamic> json) => HistoryStressInfoBean(
+  factory HistoryStressInfoBean.fromJson(Map<String, dynamic> json) =>
+      HistoryStressInfoBean(
         date: json["date"] ?? -1,
         stress: json["stress"] ?? -1,
       );
@@ -3104,9 +3480,11 @@ class HistoryStressInfoBean {
       };
 }
 
-TimingStressInfoBean timingStressInfoBeanFromJson(String str) => TimingStressInfoBean.fromJson(json.decode(str));
+TimingStressInfoBean timingStressInfoBeanFromJson(String str) =>
+    TimingStressInfoBean.fromJson(json.decode(str));
 
-String timingStressInfoBeanToJson(TimingStressInfoBean data) => json.encode(data.toJson());
+String timingStressInfoBeanToJson(TimingStressInfoBean data) =>
+    json.encode(data.toJson());
 
 class TimingStressInfoBean {
   TimingStressInfoBean({
@@ -3117,8 +3495,9 @@ class TimingStressInfoBean {
   String? date;
   List<int>? list;
 
-  factory TimingStressInfoBean.fromJson(Map<String, dynamic> json) => TimingStressInfoBean(
-    date: json["date"] ?? "",
+  factory TimingStressInfoBean.fromJson(Map<String, dynamic> json) =>
+      TimingStressInfoBean(
+        date: json["date"] ?? "",
         list: List<int>.from((json["list"] ?? []).map((x) => x)),
       );
 
@@ -3144,9 +3523,11 @@ class StressDateBean {
       };
 }
 
-GpsChangeEventBean gpsChangeEventBeanFromJson(String str) => GpsChangeEventBean.fromJson(json.decode(str));
+GpsChangeEventBean gpsChangeEventBeanFromJson(String str) =>
+    GpsChangeEventBean.fromJson(json.decode(str));
 
-String gpsChangeEventBeanToJson(GpsChangeEventBean data) => json.encode(data.toJson());
+String gpsChangeEventBeanToJson(GpsChangeEventBean data) =>
+    json.encode(data.toJson());
 
 class GpsChangeEventBean {
   GpsChangeEventBean({
@@ -3155,7 +3536,8 @@ class GpsChangeEventBean {
 
   int? time;
 
-  factory GpsChangeEventBean.fromJson(Map<String, dynamic> json) => GpsChangeEventBean(
+  factory GpsChangeEventBean.fromJson(Map<String, dynamic> json) =>
+      GpsChangeEventBean(
         time: json["time"] ?? -1,
       );
 
@@ -3164,7 +3546,8 @@ class GpsChangeEventBean {
       };
 }
 
-GpsPathInfo gpsPathInfoFromJson(String str) => GpsPathInfo.fromJson(json.decode(str));
+GpsPathInfo gpsPathInfoFromJson(String str) =>
+    GpsPathInfo.fromJson(json.decode(str));
 
 String gpsPathInfoToJson(GpsPathInfo data) => json.encode(data.toJson());
 
@@ -3179,7 +3562,8 @@ class GpsPathInfo {
 
   factory GpsPathInfo.fromJson(Map<String, dynamic> json) => GpsPathInfo(
         time: json["time"] ?? -1,
-        locationList: List<Location>.from((json["locationList"] ?? []).map((x) => (Location.fromJson(x)))),
+        locationList: List<Location>.from(
+            (json["locationList"] ?? []).map((x) => (Location.fromJson(x)))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -3211,9 +3595,11 @@ class Location {
       };
 }
 
-VibrationStrength vibrationStrengthFromJson(String str) => VibrationStrength.fromJson(json.decode(str));
+VibrationStrength vibrationStrengthFromJson(String str) =>
+    VibrationStrength.fromJson(json.decode(str));
 
-String vibrationStrengthToJson(VibrationStrength data) => json.encode(data.toJson());
+String vibrationStrengthToJson(VibrationStrength data) =>
+    json.encode(data.toJson());
 
 class VibrationStrength {
   VibrationStrength({
@@ -3222,7 +3608,8 @@ class VibrationStrength {
 
   int? value;
 
-  factory VibrationStrength.fromJson(Map<String, dynamic> json) => VibrationStrength(
+  factory VibrationStrength.fromJson(Map<String, dynamic> json) =>
+      VibrationStrength(
         value: json["value"] ?? -1,
       );
 
@@ -3231,9 +3618,11 @@ class VibrationStrength {
       };
 }
 
-The24HourListBean the24HourListBeanFromJson(String str) => The24HourListBean.fromJson(json.decode(str));
+The24HourListBean the24HourListBeanFromJson(String str) =>
+    The24HourListBean.fromJson(json.decode(str));
 
-String the24HourListBeanToJson(The24HourListBean data) => json.encode(data.toJson());
+String the24HourListBeanToJson(The24HourListBean data) =>
+    json.encode(data.toJson());
 
 class The24HourListBean {
   The24HourListBean({
@@ -3242,7 +3631,8 @@ class The24HourListBean {
 
   List<ListBean>? list;
 
-  factory The24HourListBean.fromJson(Map<String, dynamic> json) => The24HourListBean(
+  factory The24HourListBean.fromJson(Map<String, dynamic> json) =>
+      The24HourListBean(
         list: List<ListBean>.from(
           (json["list"] ?? []).map(
             (x) => (ListBean.fromJson(x)),
@@ -3275,7 +3665,8 @@ class ListBean {
       };
 }
 
-CameraBean cameraBeanFromJson(String str) => CameraBean.fromJson(json.decode(str));
+CameraBean cameraBeanFromJson(String str) =>
+    CameraBean.fromJson(json.decode(str));
 
 String cameraBeanToJson(CameraBean data) => json.encode(data.toJson());
 
@@ -3299,9 +3690,11 @@ class CameraBean {
       };
 }
 
-NotificationBean notificationBeanFromJson(String str) => NotificationBean.fromJson(json.decode(str));
+NotificationBean notificationBeanFromJson(String str) =>
+    NotificationBean.fromJson(json.decode(str));
 
-String notificationBeanToJson(NotificationBean data) => json.encode(data.toJson());
+String notificationBeanToJson(NotificationBean data) =>
+    json.encode(data.toJson());
 
 class NotificationBean {
   NotificationBean({
@@ -3312,7 +3705,8 @@ class NotificationBean {
   bool? isNew;
   List<int>? list;
 
-  factory NotificationBean.fromJson(Map<String, dynamic> json) => NotificationBean(
+  factory NotificationBean.fromJson(Map<String, dynamic> json) =>
+      NotificationBean(
         isNew: json["isNew"] ?? false,
         list: List<int>.from((json["list"] ?? []).map((x) => x)),
       );
