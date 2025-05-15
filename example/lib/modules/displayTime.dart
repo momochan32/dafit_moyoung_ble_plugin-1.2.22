@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:moyoung_ble_plugin/moyoung_ble.dart';
+
+import '../components/base/CustomGestureDetector.dart';
+
+class DisplayTimePage extends StatefulWidget {
+  final MoYoungBle blePlugin;
+
+  const DisplayTimePage({
+    Key? key,
+    required this.blePlugin,
+  }) : super(key: key);
+
+  @override
+  State<DisplayTimePage> createState() {
+    return _DisplayTimePage();
+  }
+}
+
+class _DisplayTimePage extends State<DisplayTimePage> {
+  int _time = -1;
+  CrossFadeState displayState1 = CrossFadeState.showSecond;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: const Text("Display Time"),
+              automaticallyImplyLeading: false, // 禁用默认的返回按钮
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context); // 手动处理返回逻辑
+                },
+              ),
+            ),
+            body: Center(
+                child: ListView(children: <Widget>[
+              CustomGestureDetector(
+                  title: 'Time',
+                  childrenBCallBack: (CrossFadeState newDisplayState) {
+                    setState(() {
+                      displayState1 = newDisplayState;
+                    });
+                  },
+                  displayState: displayState1,
+                  children: <Widget>[
+                    Text("time: $_time", style: const TextStyle(height: 1.5, fontSize: 14, color: Colors.grey)),
+                    ElevatedButton(
+                        onPressed: () => widget.blePlugin.sendDisplayTime(DisplayTimeType.displayFive),
+                        child: const Text("sendDisplayTime(displayFive)")),
+                    ElevatedButton(
+                        onPressed: () => widget.blePlugin.sendDisplayTime(DisplayTimeType.displayTen),
+                        child: const Text("sendDisplayTime(displayTen)")),
+                    ElevatedButton(
+                        onPressed: () async {
+                          int time = await widget.blePlugin.queryDisplayTime;
+                          setState(() {
+                            _time = time;
+                          });
+                        },
+                        child: const Text("queryDisplayTime()"))
+                  ])
+            ]))));
+  }
+}

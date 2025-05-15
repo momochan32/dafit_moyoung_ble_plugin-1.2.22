@@ -1,0 +1,11 @@
+framework module SFDialPlateSDK {
+  umbrella header "SFDialPlateSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module SFDialPlateSDK.Swift {
+    header "SFDialPlateSDK-Swift.h"
+    requires objc
+}

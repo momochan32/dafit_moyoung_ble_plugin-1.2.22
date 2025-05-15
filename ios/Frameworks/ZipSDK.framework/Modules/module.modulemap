@@ -1,0 +1,4 @@
+framework module ZipSDK {
+  header "ZipSDK-Swift.h"
+  requires objc
+}
